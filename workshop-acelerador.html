@@ -43,7 +43,7 @@ body:has(a:hover) #cur2{width:50px;height:50px;border-color:rgba(0,200,255,.7)}
 .htitle .f{color:var(--white);display:block}
 .htitle .b{color:var(--neon);display:block;text-shadow:0 0 40px rgba(0,200,255,.75),0 0 90px rgba(0,200,255,.35);animation:glitch1 8s ease-in-out infinite;position:relative}
 .htitle .b::after{content:'Negócios';position:absolute;top:0;left:0;right:0;color:rgba(0,240,255,.45);animation:glitch2 8s ease-in-out infinite}
-.hsub{font-size:clamp(16px,2.2vw,20px);color:rgba(255,255,255,.65);max-width:580px;margin:0 auto 40px;line-height:1.65;animation:fU .8s .4s ease forwards;opacity:0}
+.hsub{font-size:clamp(15px,4vw,20px);color:rgba(255,255,255,.65);max-width:580px;margin:0 auto 40px;line-height:1.65;animation:fU .8s .4s ease forwards;opacity:0}
 .hsub strong{color:#fff}
 .hbar{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:46px;animation:fU .8s .55s ease forwards;opacity:0}
 .pill{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);padding:10px 18px;border-radius:8px;font-size:13px;font-weight:600;transition:border-color .3s,background .3s}
@@ -80,7 +80,7 @@ body:has(a:hover) #cur2{width:50px;height:50px;border-color:rgba(0,200,255,.7)}
 
 /* SECTIONS */
 .sw{position:relative;z-index:2}
-.st{font-family:'Barlow Condensed',sans-serif;font-size:clamp(34px,5.5vw,58px);font-weight:900;text-transform:uppercase;line-height:1;margin-bottom:14px}
+.st{font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,7vw,58px);font-weight:900;text-transform:uppercase;line-height:1;margin-bottom:14px}
 .st .ac{color:var(--neon)}
 .sd{font-size:17px;color:rgba(255,255,255,.55);line-height:1.72;max-width:540px}
 
@@ -114,8 +114,8 @@ body:has(a:hover) #cur2{width:50px;height:50px;border-color:rgba(0,200,255,.7)}
 .pcc:hover::after{transform:scaleX(1)}
 .pcc::before{content:'';position:absolute;top:0;right:0;width:36px;height:36px;border-top:1px solid rgba(0,200,255,0);border-right:1px solid rgba(0,200,255,0);transition:border-color .35s}
 .pcc:hover::before{border-top-color:rgba(0,200,255,.4);border-right-color:rgba(0,200,255,.4)}
-.pcl{font-family:'Barlow Condensed',sans-serif;font-size:72px;font-weight:900;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(0,200,255,.17);position:absolute;top:10px;right:16px;transition:all .35s}
-.pcc:hover .pcl{-webkit-text-stroke:1px rgba(0,200,255,.4)}
+.pcl{font-family:'Barlow Condensed',sans-serif;font-size:72px;font-weight:900;line-height:1;color:rgba(0,200,255,.13);-webkit-text-stroke:1px rgba(0,200,255,.45);position:absolute;top:10px;right:16px;transition:all .35s;text-shadow:0 0 20px rgba(0,200,255,.15)}
+.pcc:hover .pcl{color:rgba(0,200,255,.22);-webkit-text-stroke:1px rgba(0,200,255,.7);text-shadow:0 0 30px rgba(0,200,255,.3)}
 .pcn{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--neon);margin-bottom:10px}
 .pcname{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;text-transform:uppercase;margin-bottom:10px}
 .pcd{font-size:13.5px;color:rgba(255,255,255,.5);line-height:1.62}
@@ -141,9 +141,9 @@ body:has(a:hover) #cur2{width:50px;height:50px;border-color:rgba(0,200,255,.7)}
 .spk-card:hover{border-color:rgba(0,200,255,.35);transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,200,255,.1)}
 .spk-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--neon));transform:scaleX(0);transition:transform .35s;transform-origin:left}
 .spk-card:hover::after{transform:scaleX(1)}
-.spk-img-wrap{position:relative;height:340px;overflow:hidden;background:#0a1628}
-.spk-img-wrap::after{content:'';position:absolute;bottom:0;left:0;right:0;height:50%;background:linear-gradient(0deg,rgba(2,11,22,1) 0%,transparent 100%)}
-.spk-img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(15%) contrast(1.05);transition:transform .5s,filter .5s}
+.spk-img-wrap{position:relative;height:420px;overflow:hidden;background:#0a1628}
+.spk-img-wrap::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(0deg,rgba(2,11,22,1) 0%,transparent 100%)}
+.spk-img{width:100%;height:100%;object-fit:cover;object-position:center 15%;filter:grayscale(15%) contrast(1.05);transition:transform .5s,filter .5s}
 .spk-card:hover .spk-img{transform:scale(1.04);filter:grayscale(0%) contrast(1.08)}
 /* neon glow rim on image */
 .spk-img-wrap::before{content:'';position:absolute;inset:0;box-shadow:inset 0 0 40px rgba(0,200,255,.06);z-index:1;pointer-events:none;transition:box-shadow .35s}
@@ -169,6 +169,27 @@ body:has(a:hover) #cur2{width:50px;height:50px;border-color:rgba(0,200,255,.7)}
 .fwl li{display:flex;gap:12px;align-items:flex-start;padding:9px 0;font-size:14.5px;color:rgba(255,255,255,.66);border-bottom:1px solid rgba(255,255,255,.04)}
 .fwl li:last-child{border:none}
 .fwi{display:flex;align-items:center;width:20px;height:20px;flex-shrink:0;margin-top:1px}
+
+/* TESTIMONIALS */
+.tst-section{padding:90px 20px;max-width:1100px;margin:0 auto}
+.tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+@media(max-width:900px){.tst-grid{grid-template-columns:1fr}}
+.tst-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:32px 28px;display:flex;flex-direction:column;gap:20px;position:relative;overflow:hidden;transition:border-color .35s,transform .35s,box-shadow .35s;opacity:0;transform:translateY(36px)}
+.tst-card.vis{opacity:1;transform:none}
+.tst-card:hover{border-color:rgba(0,200,255,.28);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,200,255,.08)}
+.tst-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--neon));transform:scaleX(0);transition:transform .4s;transform-origin:left}
+.tst-card:hover::before{transform:scaleX(1)}
+/* big quote mark */
+.tst-card::after{content:'\201C';position:absolute;top:-10px;right:20px;font-size:120px;line-height:1;color:rgba(0,200,255,.07);font-family:'Barlow Condensed',sans-serif;font-weight:900;pointer-events:none}
+.tst-stars{display:flex;gap:4px}
+.tst-star{color:var(--neon);font-size:15px;text-shadow:0 0 8px rgba(0,200,255,.6)}
+.tst-text{font-size:15px;color:rgba(255,255,255,.72);line-height:1.7;font-style:italic;flex:1}
+.tst-text strong{color:var(--white);font-style:normal}
+.tst-author{display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,.06);padding-top:18px}
+.tst-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--neon));display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:900;flex-shrink:0;box-shadow:0 0 16px rgba(0,200,255,.3)}
+.tst-info strong{display:block;font-size:14px;font-weight:700;color:var(--white)}
+.tst-info span{font-size:12px;color:rgba(255,255,255,.38);letter-spacing:.5px}
+.tst-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,200,255,.07);border:1px solid rgba(0,200,255,.18);border-radius:100px;padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--neon);margin-bottom:4px;align-self:flex-start}
 
 /* EVENT DETAILS */
 .evd-section{padding:70px 20px;background:rgba(7,17,32,.7);border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);backdrop-filter:blur(6px)}
@@ -212,6 +233,142 @@ body:has(a:hover) #cur2{width:50px;height:50px;border-color:rgba(0,200,255,.7)}
 footer{text-align:center;padding:28px 20px 100px;font-size:11px;color:rgba(255,255,255,.16);letter-spacing:1px;position:relative;z-index:2}
 @keyframes fD{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:none}}
 @keyframes fU{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+
+/* ═══════════════════════════════
+   MOBILE REFINEMENT  ≤ 480px
+═══════════════════════════════ */
+@media(max-width:480px){
+
+  /* Hero */
+  .hero{padding:80px 20px 90px;min-height:100svh}
+  .tag{font-size:10px;letter-spacing:2px;padding:7px 16px}
+  .hlabel{letter-spacing:3px;font-size:12px}
+  .htitle{letter-spacing:-1px;margin-bottom:20px}
+  .htitle .b::after{display:none} /* hide glitch ghost on small screens */
+  .hsub{font-size:16px;margin-bottom:32px;padding:0 4px}
+  .hbar{gap:8px}
+  .pill{font-size:12px;padding:9px 13px;gap:6px}
+  .btnm{font-size:19px;padding:17px 28px;width:100%;justify-content:center;border-radius:8px}
+  .ph{font-size:13px}
+  .scroll-hint{display:none}
+
+  /* Countdown */
+  .cds{padding:40px 16px}
+  .cdl{font-size:10px;letter-spacing:3px}
+  .cdt{gap:6px}
+  .cdb{min-width:68px}
+  .cdn{font-size:clamp(38px,12vw,56px)}
+  .cdu{font-size:9px;letter-spacing:2px}
+  .cdsp{font-size:40px;margin-bottom:12px}
+
+  /* Section titles */
+  .st{font-size:clamp(28px,8vw,40px)}
+  .sd{font-size:15px}
+
+  /* Problem */
+  .pw{padding:60px 16px}
+  .pi{gap:32px}
+  .bib{padding:28px 22px}
+  .bit{font-size:clamp(18px,5vw,24px)}
+  .pni{gap:12px;padding:14px 0}
+  .pio{width:34px;height:34px;flex-shrink:0}
+  .pt{font-size:14px}
+
+  /* PACE */
+  .pcs{padding:60px 16px}
+  .pch{margin-bottom:36px}
+  .pcg{gap:12px}
+  .pcc{padding:24px 18px}
+  .pcl{font-size:56px;top:8px;right:12px}
+  .pcname{font-size:22px}
+  .pcd{font-size:13px}
+
+  /* Learn */
+  .lw{padding:60px 16px}
+  .lg{gap:12px;margin-top:32px}
+  .lc{padding:20px 18px;gap:12px}
+  .lt{font-size:14px}
+  .lt strong{font-size:14.5px}
+
+  /* Speakers */
+  .spk-section{padding:60px 16px}
+  .spk-grid{gap:20px;max-width:100%}
+  .spk-img-wrap{height:300px}
+  .spk-body{padding:22px 20px 26px}
+  .spk-name{font-size:clamp(24px,7vw,32px)}
+  .spk-bio{font-size:13.5px}
+  .spk-tag{font-size:11px;padding:4px 10px}
+
+  /* For who */
+  .fws{padding:60px 16px}
+  .fwg{gap:14px;margin-top:32px}
+  .fwc{padding:26px 20px}
+  .fwt{font-size:18px}
+  .fwl li{font-size:14px;padding:8px 0}
+
+  /* Testimonials */
+  .tst-section{padding:60px 16px}
+  .tst-grid{gap:14px;margin-top:32px}
+  .tst-card{padding:24px 20px;gap:16px}
+  .tst-text{font-size:14px}
+  .tst-card::after{font-size:90px;top:-6px;right:14px}
+  .tst-badge{font-size:10px;padding:3px 10px}
+  .tst-info strong{font-size:13px}
+
+  /* Event details */
+  .evd-section{padding:50px 16px}
+  .evd-inner{gap:12px}
+  .evd-card{padding:22px 20px;flex-direction:row;align-items:flex-start;gap:16px}
+  .evd-icon{flex-shrink:0;width:40px;height:40px;margin-bottom:0}
+  .evd-value{font-size:clamp(18px,5vw,22px)}
+  .evd-sub{font-size:12px}
+
+  /* Final CTA */
+  .fcw{padding:70px 16px}
+  .pbadge{padding:16px 28px;margin:24px auto}
+  .pmain{font-size:52px}
+  .btnf{font-size:20px;padding:20px 24px;width:100%;justify-content:center;border-radius:8px}
+  .gu{font-size:11px;text-align:center;flex-wrap:wrap;justify-content:center;gap:6px}
+
+  /* Sticky bar */
+  .stk{padding:10px 16px}
+  .si strong{font-size:14px}
+  .si span{font-size:11px}
+  .btns{font-size:14px;padding:10px 20px;width:100%;justify-content:center;text-align:center}
+}
+
+/* ═══════════════════════════════
+   TABLET REFINEMENT  481–768px
+═══════════════════════════════ */
+@media(min-width:481px) and (max-width:768px){
+
+  .hero{padding:80px 28px 90px}
+  .btnm{font-size:20px;padding:18px 36px}
+  .hbar{gap:9px}
+  .pill{font-size:12px;padding:9px 14px}
+
+  .cds{padding:44px 24px}
+  .cdb{min-width:76px}
+
+  .pw{padding:70px 24px}
+  .pcs{padding:70px 24px}
+  .lw{padding:70px 24px}
+  .spk-section{padding:70px 24px}
+  .fws{padding:70px 24px}
+  .tst-section{padding:70px 24px}
+  .evd-section{padding:56px 24px}
+  .fcw{padding:80px 24px}
+
+  .evd-inner{grid-template-columns:1fr 1fr}
+  .evd-card:last-child{grid-column:1/-1}
+
+  .tst-grid{grid-template-columns:1fr}
+
+  .spk-img-wrap{height:360px}
+
+  .btnf{font-size:22px;padding:22px 40px}
+  .stk{padding:12px 20px}
+}
 </style>
 </head>
 <body>
@@ -317,7 +474,7 @@ footer{text-align:center;padding:28px 20px 100px;font-size:11px;color:rgba(255,2
 
       <div class="spk-card rv" style="transition-delay:.05s">
         <div class="spk-img-wrap">
-          <img src="lucas.jpeg" alt="Tenente Lucas" class="spk-img" style="object-position:top center">
+          <img src="lucas.jpeg" alt="Tenente Lucas" class="spk-img" style="object-position:center 8%">
         </div>
         <div class="spk-body">
           <p class="spk-num">Palestrante 01</p>
@@ -333,7 +490,7 @@ footer{text-align:center;padding:28px 20px 100px;font-size:11px;color:rgba(255,2
 
       <div class="spk-card rv" style="transition-delay:.15s">
         <div class="spk-img-wrap">
-          <img src="rian.png" alt="Rian Mazille" class="spk-img">
+          <img src="rian.png" alt="Rian Mazille" class="spk-img" style="object-position:center 10%">
         </div>
         <div class="spk-body">
           <p class="spk-num">Palestrante 02</p>
@@ -375,6 +532,71 @@ footer{text-align:center;padding:28px 20px 100px;font-size:11px;color:rgba(255,2
         <li><span class="fwi"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 3l8 8M11 3L3 11" stroke="rgba(255,255,255,.28)" stroke-width="1.6" stroke-linecap="round"/></svg></span>Não tem compromisso com o crescimento</li>
       </ul>
     </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="tst-section sw">
+  <div class="rv">
+    <p class="st">O que dizem quem <span class="ac">já viveu</span></p>
+    <p class="sd" style="margin-top:6px">Empresários locais que aplicaram o Método PACE e mudaram de patamar.</p>
+  </div>
+  <div class="tst-grid">
+
+    <div class="tst-card">
+      <div>
+        <div class="tst-badge">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1l1.2 2.6L9 4.1 7 6l.5 2.9L5 7.5 2.5 8.9 3 6 1 4.1l2.8-.5L5 1z" fill="var(--neon)"/></svg>
+          Escala &amp; Previsibilidade
+        </div>
+        <div class="tst-stars">★★★★★</div>
+      </div>
+      <p class="tst-text">"Eu vivia refém de indicações e do boca a boca para vender. Com a aplicação do Método PACE, finalmente entendi o que é ter <strong>uma máquina de aquisição de clientes</strong>. O Lucas e o Rian não entregam teoria, entregam o que aplicam na agência deles todos os dias. Minha empresa em Petrolina mudou de patamar."</p>
+      <div class="tst-author">
+        <div class="tst-avatar">E</div>
+        <div class="tst-info">
+          <strong>Empresário(a) Local</strong>
+          <span>Petrolina · PE</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tst-card" style="transition-delay:.1s">
+      <div>
+        <div class="tst-badge">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1l1.2 2.6L9 4.1 7 6l.5 2.9L5 7.5 2.5 8.9 3 6 1 4.1l2.8-.5L5 1z" fill="var(--neon)"/></svg>
+          Processo &amp; Organização
+        </div>
+        <div class="tst-stars">★★★★★</div>
+      </div>
+      <p class="tst-text">"O maior erro do dono de negócio é achar que precisa estar em tudo. O Método PACE organizou meu posicionamento e meu processo comercial de ponta a ponta. Hoje, <strong>sei exatamente de onde vem cada venda</strong> e, o melhor: a operação não depende mais da minha presença 24h por dia para funcionar."</p>
+      <div class="tst-author">
+        <div class="tst-avatar">D</div>
+        <div class="tst-info">
+          <strong>Dono(a) de Empresa de Serviços</strong>
+          <span>Região de Petrolina · PE</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tst-card" style="transition-delay:.2s">
+      <div>
+        <div class="tst-badge">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1l1.2 2.6L9 4.1 7 6l.5 2.9L5 7.5 2.5 8.9 3 6 1 4.1l2.8-.5L5 1z" fill="var(--neon)"/></svg>
+          Autoridade &amp; Resultado
+        </div>
+        <div class="tst-stars">★★★★★</div>
+      </div>
+      <p class="tst-text">"O diferencial do Tenente Lucas e do Rian é a clareza. Eles pegam o marketing e as vendas, que parecem complexos, e transformam em <strong>um sistema lógico de Conversão e Escala</strong>. Os primeiros ajustes que fiz seguindo a metodologia deles já mudaram o jogo aqui no negócio. Valeu a pena demais estar lá."</p>
+      <div class="tst-author">
+        <div class="tst-avatar">L</div>
+        <div class="tst-info">
+          <strong>Lojista / Empreendedor(a)</strong>
+          <span>Petrolina · PE</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -718,7 +940,7 @@ tick();setInterval(tick,1000);
 
 /* ═══ REVEAL ═══ */
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});},{threshold:.1});
-document.querySelectorAll('.rv,.pni,.pcc,.lc').forEach(el=>obs.observe(el));
+document.querySelectorAll('.rv,.pni,.pcc,.lc,.tst-card').forEach(el=>obs.observe(el));
 document.querySelectorAll('.pcc').forEach((c,i)=>c.style.transitionDelay=(i*.1)+'s');
 document.querySelectorAll('.lc').forEach((c,i)=>c.style.transitionDelay=(i*.08)+'s');
 
