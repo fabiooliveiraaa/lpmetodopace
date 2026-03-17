@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workshop Acelerador de Negócios | Método PACE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#020b16;
+  --navy2:#071120;
+  --blue:#0a6efd;
+  --neon:#00c8ff;
+  --white:#fff;
+  --gray:#8ba4bc;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--white);font-family:'Barlow',sans-serif;overflow-x:hidden;cursor:none}
+
+/* CUSTOM CURSOR */
+#cur{position:fixed;width:11px;height:11px;border-radius:50%;background:var(--neon);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen;box-shadow:0 0 10px var(--neon),0 0 20px rgba(0,200,255,.4)}
+#cur2{position:fixed;width:34px;height:34px;border-radius:50%;border:1px solid rgba(0,200,255,.38);pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .2s,height .2s,border-color .2s}
+body:has(a:hover) #cur2{width:50px;height:50px;border-color:rgba(0,200,255,.7)}
+@media(pointer:coarse){#cur,#cur2{display:none}body{cursor:auto}}
+
+#bg{position:fixed;inset:0;z-index:0;pointer-events:none}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px 80px;text-align:center;z-index:2}
+.hc{position:relative;z-index:3;max-width:940px}
+
+@keyframes glitch1{0%,90%,100%{clip-path:none;transform:none}92%{clip-path:polygon(0 18%,100% 18%,100% 34%,0 34%);transform:translate(-4px,0)}94%{clip-path:polygon(0 58%,100% 58%,100% 74%,0 74%);transform:translate(4px,0)}96%{clip-path:none}}
+@keyframes glitch2{0%,88%,100%{opacity:0}89%{opacity:.45;clip-path:polygon(0 38%,100% 38%,100% 54%,0 54%);transform:translate(5px,0) skewX(-2deg)}91%{opacity:0}}
+
+.tag{display:inline-flex;align-items:center;gap:9px;background:rgba(0,200,255,.07);border:1px solid rgba(0,200,255,.24);color:var(--neon);font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:8px 22px;border-radius:100px;margin-bottom:28px;animation:fD .7s ease forwards;opacity:0}
+.dot{width:6px;height:6px;background:var(--neon);border-radius:50%;animation:bk 1.4s ease-in-out infinite;box-shadow:0 0 8px var(--neon)}
+@keyframes bk{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.6)}}
+.hlabel{font-family:'Barlow Condensed',sans-serif;font-size:clamp(13px,2.5vw,17px);font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--neon);margin-bottom:14px;animation:fD .7s .15s ease forwards;opacity:0}
+.htitle{font-family:'Barlow Condensed',sans-serif;font-size:clamp(58px,12vw,118px);font-weight:900;line-height:.88;text-transform:uppercase;letter-spacing:-2px;margin-bottom:24px;animation:fU .8s .25s ease forwards;opacity:0}
+.htitle .o{-webkit-text-stroke:2px rgba(255,255,255,.11);color:transparent;display:block}
+.htitle .f{color:var(--white);display:block}
+.htitle .b{color:var(--neon);display:block;text-shadow:0 0 40px rgba(0,200,255,.75),0 0 90px rgba(0,200,255,.35);animation:glitch1 8s ease-in-out infinite;position:relative}
+.htitle .b::after{content:'Negócios';position:absolute;top:0;left:0;right:0;color:rgba(0,240,255,.45);animation:glitch2 8s ease-in-out infinite}
+.hsub{font-size:clamp(16px,2.2vw,20px);color:rgba(255,255,255,.65);max-width:580px;margin:0 auto 40px;line-height:1.65;animation:fU .8s .4s ease forwards;opacity:0}
+.hsub strong{color:#fff}
+.hbar{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:46px;animation:fU .8s .55s ease forwards;opacity:0}
+.pill{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);padding:10px 18px;border-radius:8px;font-size:13px;font-weight:600;transition:border-color .3s,background .3s}
+.pill:hover{border-color:rgba(0,200,255,.3);background:rgba(0,200,255,.05)}
+.pill .v{color:var(--neon)}
+.hcta{animation:fU .8s .7s ease forwards;opacity:0;display:flex;flex-direction:column;align-items:center;gap:13px}
+.btnm{display:inline-flex;align-items:center;gap:14px;background:linear-gradient(135deg,var(--blue),var(--neon));color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:23px;font-weight:900;letter-spacing:1px;text-transform:uppercase;padding:20px 56px;border-radius:6px;text-decoration:none;position:relative;overflow:hidden;box-shadow:0 8px 40px rgba(0,100,253,.45),0 0 80px rgba(0,200,255,.12);transition:transform .2s,box-shadow .2s}
+.btnm::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.1) 100%)}
+.btnm::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);animation:sh 3.5s ease-in-out infinite}
+.btnm:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 14px 60px rgba(0,100,253,.65),0 0 120px rgba(0,200,255,.25)}
+.arr{display:inline-flex;align-items:center;transition:transform .2s}
+.btnm:hover .arr{transform:translateX(6px)}
+.ph{font-size:14px;color:rgba(255,255,255,.38)}
+.ph strong{color:var(--neon);font-size:17px}
+@keyframes sh{0%,100%{left:-120%}45%,55%{left:160%}}
+
+.scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;animation:fU .8s 1.2s ease forwards;opacity:0}
+.scroll-hint span{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.26)}
+.scroll-mouse{width:22px;height:34px;border:1px solid rgba(255,255,255,.18);border-radius:11px;display:flex;justify-content:center;padding-top:7px}
+.scroll-wheel{width:3px;height:7px;background:var(--neon);border-radius:2px;animation:scrollY 1.8s ease-in-out infinite;box-shadow:0 0 6px var(--neon)}
+@keyframes scrollY{0%{transform:translateY(0);opacity:1}100%{transform:translateY(10px);opacity:0}}
+
+/* COUNTDOWN */
+.cds{position:relative;z-index:2;padding:56px 20px;text-align:center;background:rgba(7,17,32,.75);border-top:1px solid rgba(0,200,255,.08);border-bottom:1px solid rgba(0,200,255,.08);backdrop-filter:blur(6px)}
+.cdl{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--neon);margin-bottom:24px;display:flex;align-items:center;justify-content:center;gap:10px}
+.cdp{width:8px;height:8px;background:var(--neon);border-radius:50%;animation:bk 1.4s ease-in-out infinite;box-shadow:0 0 8px var(--neon)}
+.cdt{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+.cdb{display:flex;flex-direction:column;align-items:center;min-width:88px}
+.cdn{font-family:'Barlow Condensed',sans-serif;font-size:clamp(48px,8vw,80px);font-weight:900;line-height:1;background:linear-gradient(180deg,#fff 0%,var(--neon) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;text-align:center;min-width:2ch}
+.cdn.flip{animation:flip .32s ease}
+@keyframes flip{0%{transform:scaleY(1);opacity:1}48%{transform:scaleY(0);opacity:.2}100%{transform:scaleY(1);opacity:1}}
+.cdu{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gray);margin-top:5px}
+.cdsp{font-family:'Barlow Condensed',sans-serif;font-size:58px;font-weight:900;color:var(--neon);margin-bottom:18px;opacity:.3;animation:bk 1s ease-in-out infinite}
+
+/* SECTIONS */
+.sw{position:relative;z-index:2}
+.st{font-family:'Barlow Condensed',sans-serif;font-size:clamp(34px,5.5vw,58px);font-weight:900;text-transform:uppercase;line-height:1;margin-bottom:14px}
+.st .ac{color:var(--neon)}
+.sd{font-size:17px;color:rgba(255,255,255,.55);line-height:1.72;max-width:540px}
+
+/* PROBLEM */
+.pw{padding:90px 20px;background:rgba(7,17,32,.7);border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);backdrop-filter:blur(6px)}
+.pi{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+@media(max-width:768px){.pi{grid-template-columns:1fr;gap:40px}}
+.pnl{list-style:none;margin-top:34px}
+.pni{display:flex;align-items:flex-start;gap:14px;padding:17px 0;border-bottom:1px solid rgba(255,255,255,.05);opacity:0;transform:translateX(-28px);transition:opacity .5s,transform .5s}
+.pni.vis{opacity:1;transform:none}
+.pio{width:38px;height:38px;background:rgba(220,60,60,.09);border:1px solid rgba(220,60,60,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.pt{font-size:15px;color:rgba(255,255,255,.7);line-height:1.55}
+.pt strong{color:#fff}
+.bib{background:linear-gradient(135deg,rgba(0,100,253,.08),rgba(0,200,255,.06));border:1px solid rgba(0,200,255,.2);border-radius:16px;padding:44px 36px;position:relative;overflow:hidden}
+.bib::before{content:'';position:absolute;top:-40%;right:-20%;width:300px;height:300px;background:radial-gradient(circle,rgba(0,200,255,.09) 0%,transparent 70%);animation:pglow 4s ease-in-out infinite}
+@keyframes pglow{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.1)}}
+.bil{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--neon);margin-bottom:16px}
+.bit{font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,3.5vw,32px);font-weight:800;line-height:1.25;text-transform:uppercase}
+.bit .hl{color:var(--neon)}
+
+/* PACE */
+.pcs{padding:90px 20px;max-width:1100px;margin:0 auto}
+.pch{text-align:center;margin-bottom:60px}
+.pcg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media(max-width:900px){.pcg{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.pcg{grid-template-columns:1fr}}
+.pcc{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:30px 22px;position:relative;overflow:hidden;transition:border-color .35s,transform .35s,box-shadow .35s;opacity:0;transform:translateY(38px)}
+.pcc.vis{opacity:1;transform:none}
+.pcc:hover{border-color:var(--neon);transform:translateY(-8px);box-shadow:0 24px 60px rgba(0,200,255,.14),inset 0 0 30px rgba(0,200,255,.03)}
+.pcc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--neon));transform:scaleX(0);transition:transform .35s;transform-origin:left}
+.pcc:hover::after{transform:scaleX(1)}
+.pcc::before{content:'';position:absolute;top:0;right:0;width:36px;height:36px;border-top:1px solid rgba(0,200,255,0);border-right:1px solid rgba(0,200,255,0);transition:border-color .35s}
+.pcc:hover::before{border-top-color:rgba(0,200,255,.4);border-right-color:rgba(0,200,255,.4)}
+.pcl{font-family:'Barlow Condensed',sans-serif;font-size:72px;font-weight:900;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(0,200,255,.17);position:absolute;top:10px;right:16px;transition:all .35s}
+.pcc:hover .pcl{-webkit-text-stroke:1px rgba(0,200,255,.4)}
+.pcn{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--neon);margin-bottom:10px}
+.pcname{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;text-transform:uppercase;margin-bottom:10px}
+.pcd{font-size:13.5px;color:rgba(255,255,255,.5);line-height:1.62}
+
+/* LEARN */
+.lw{padding:90px 20px;background:rgba(7,17,32,.7);border-top:1px solid rgba(255,255,255,.04);backdrop-filter:blur(6px)}
+.li{max-width:1100px;margin:0 auto}
+.lg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+@media(max-width:768px){.lg{grid-template-columns:1fr}}
+.lc{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:26px 22px;display:flex;gap:14px;align-items:flex-start;opacity:0;transform:translateY(28px);transition:opacity .5s,transform .5s,border-color .3s}
+.lc.vis{opacity:1;transform:none}
+.lc:hover{border-color:rgba(0,200,255,.25)}
+.lck{width:26px;height:26px;background:linear-gradient(135deg,var(--blue),var(--neon));border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.lt{font-size:14.5px;color:rgba(255,255,255,.7);line-height:1.58}
+.lt strong{color:#fff;display:block;margin-bottom:3px;font-size:15px}
+
+/* SPEAKERS */
+.spk-section{padding:90px 20px;background:rgba(7,17,32,.7);border-top:1px solid rgba(255,255,255,.04);backdrop-filter:blur(6px)}
+.spk-inner{max-width:1100px;margin:0 auto}
+.spk-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:56px}
+@media(max-width:680px){.spk-grid{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}}
+.spk-card{border-radius:16px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02);overflow:hidden;display:flex;flex-direction:column;transition:border-color .35s,transform .35s,box-shadow .35s;position:relative}
+.spk-card:hover{border-color:rgba(0,200,255,.35);transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,200,255,.1)}
+.spk-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--neon));transform:scaleX(0);transition:transform .35s;transform-origin:left}
+.spk-card:hover::after{transform:scaleX(1)}
+.spk-img-wrap{position:relative;height:340px;overflow:hidden;background:#0a1628}
+.spk-img-wrap::after{content:'';position:absolute;bottom:0;left:0;right:0;height:50%;background:linear-gradient(0deg,rgba(2,11,22,1) 0%,transparent 100%)}
+.spk-img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(15%) contrast(1.05);transition:transform .5s,filter .5s}
+.spk-card:hover .spk-img{transform:scale(1.04);filter:grayscale(0%) contrast(1.08)}
+/* neon glow rim on image */
+.spk-img-wrap::before{content:'';position:absolute;inset:0;box-shadow:inset 0 0 40px rgba(0,200,255,.06);z-index:1;pointer-events:none;transition:box-shadow .35s}
+.spk-card:hover .spk-img-wrap::before{box-shadow:inset 0 0 60px rgba(0,200,255,.12)}
+.spk-body{padding:28px 28px 32px;position:relative}
+.spk-num{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--neon);margin-bottom:8px}
+.spk-name{font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,4vw,38px);font-weight:900;text-transform:uppercase;line-height:1;margin-bottom:14px}
+.spk-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.spk-tag{font-size:12px;font-weight:600;letter-spacing:.5px;padding:5px 13px;border-radius:100px;background:rgba(0,200,255,.08);border:1px solid rgba(0,200,255,.2);color:var(--neon)}
+.spk-bio{font-size:14.5px;color:rgba(255,255,255,.58);line-height:1.65}
+
+/* FOR WHO */
+.fws{padding:90px 20px;max-width:1100px;margin:0 auto}
+.fwg{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:48px}
+@media(max-width:600px){.fwg{grid-template-columns:1fr}}
+.fwc{border-radius:12px;padding:34px 30px}
+.fy{background:linear-gradient(135deg,rgba(0,200,100,.05),rgba(0,200,255,.05));border:1px solid rgba(0,200,100,.16)}
+.fn{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06)}
+.fwt{font-family:'Barlow Condensed',sans-serif;font-size:21px;font-weight:900;text-transform:uppercase;margin-bottom:22px;display:flex;align-items:center;gap:10px}
+.fy .fwt{color:#00e676}
+.fn .fwt{color:rgba(255,255,255,.3)}
+.fwl{list-style:none}
+.fwl li{display:flex;gap:12px;align-items:flex-start;padding:9px 0;font-size:14.5px;color:rgba(255,255,255,.66);border-bottom:1px solid rgba(255,255,255,.04)}
+.fwl li:last-child{border:none}
+.fwi{display:flex;align-items:center;width:20px;height:20px;flex-shrink:0;margin-top:1px}
+
+/* EVENT DETAILS */
+.evd-section{padding:70px 20px;background:rgba(7,17,32,.7);border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);backdrop-filter:blur(6px)}
+.evd-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+@media(max-width:768px){.evd-inner{grid-template-columns:1fr;max-width:480px}}
+.evd-card{border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:28px 24px;background:rgba(255,255,255,.02);display:flex;flex-direction:column;gap:10px;transition:border-color .3s,transform .3s}
+.evd-card:hover{border-color:rgba(0,200,255,.3);transform:translateY(-4px)}
+.evd-icon{width:44px;height:44px;border-radius:10px;background:rgba(0,200,255,.08);border:1px solid rgba(0,200,255,.2);display:flex;align-items:center;justify-content:center;margin-bottom:4px}
+.evd-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--neon)}
+.evd-value{font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,3vw,28px);font-weight:900;text-transform:uppercase;line-height:1.1}
+.evd-sub{font-size:13px;color:rgba(255,255,255,.45);line-height:1.5}
+.evd-map-link{display:inline-flex;align-items:center;gap:6px;margin-top:4px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--neon);text-decoration:none;transition:opacity .2s}
+.evd-map-link:hover{opacity:.7}
+
+/* FINAL CTA */
+.fcw{padding:100px 20px;text-align:center;position:relative;overflow:hidden;background:rgba(7,17,32,.8);border-top:1px solid rgba(0,200,255,.08);z-index:2;backdrop-filter:blur(8px)}
+.fcw::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(0,100,253,.1) 0%,transparent 70%)}
+.fcc{position:relative;z-index:1;max-width:700px;margin:0 auto}
+.pbadge{display:inline-flex;flex-direction:column;align-items:center;background:rgba(0,200,255,.05);border:1px solid rgba(0,200,255,.25);border-radius:12px;padding:18px 44px;margin:34px auto}
+.pfrom{font-size:12px;color:rgba(255,255,255,.35);text-decoration:line-through;letter-spacing:1px}
+.pmain{font-family:'Barlow Condensed',sans-serif;font-size:68px;font-weight:900;color:var(--neon);line-height:1;text-shadow:0 0 40px rgba(0,200,255,.5)}
+.psub{font-size:12px;color:rgba(255,255,255,.42);letter-spacing:1px}
+.btnf{display:inline-flex;align-items:center;gap:14px;background:linear-gradient(135deg,var(--blue),var(--neon));color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:27px;font-weight:900;letter-spacing:1px;text-transform:uppercase;padding:24px 66px;border-radius:8px;text-decoration:none;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s;animation:cp 2.5s ease-in-out infinite}
+@keyframes cp{0%,100%{box-shadow:0 10px 50px rgba(0,100,253,.5),0 0 100px rgba(0,200,255,.18)}50%{box-shadow:0 10px 70px rgba(0,100,253,.7),0 0 140px rgba(0,200,255,.35)}}
+.btnf:hover{transform:translateY(-4px) scale(1.03);animation:none;box-shadow:0 16px 80px rgba(0,100,253,.7)}
+.btnf::after{content:'';position:absolute;top:0;left:-120%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);animation:sh 3s ease-in-out infinite}
+.gu{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:22px;font-size:12px;color:rgba(255,255,255,.36)}
+
+/* STICKY */
+.stk{position:fixed;bottom:0;left:0;right:0;background:rgba(2,11,22,.95);backdrop-filter:blur(20px);border-top:1px solid rgba(0,200,255,.16);padding:13px 24px;display:flex;align-items:center;justify-content:space-between;gap:14px;z-index:999;transform:translateY(100%);transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.stk.vis{transform:translateY(0)}
+@media(max-width:580px){.stk{flex-direction:column;padding:11px 18px}}
+.si strong{display:block;font-family:'Barlow Condensed',sans-serif;font-size:17px;text-transform:uppercase}
+.si span{color:rgba(255,255,255,.42);font-size:12px}
+.btns{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--blue),var(--neon));color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:900;text-transform:uppercase;letter-spacing:1px;padding:11px 30px;border-radius:6px;text-decoration:none;white-space:nowrap;transition:transform .2s}
+.btns:hover{transform:scale(1.04)}
+
+.dv{height:1px;background:linear-gradient(90deg,transparent,rgba(0,200,255,.22),transparent);max-width:800px;margin:0 auto;position:relative;z-index:2}
+.rv{opacity:0;transform:translateY(38px);transition:opacity .7s ease,transform .7s ease}
+.rv.vis{opacity:1;transform:none}
+footer{text-align:center;padding:28px 20px 100px;font-size:11px;color:rgba(255,255,255,.16);letter-spacing:1px;position:relative;z-index:2}
+@keyframes fD{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:none}}
+@keyframes fU{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur2"></div>
+<canvas id="bg"></canvas>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hc">
+    <div class="tag"><span class="dot"></span>Evento Presencial · 16 de Abril</div>
+    <p class="hlabel">Workshop · Método PACE</p>
+    <h1 class="htitle">
+      <span class="o">Acelerador</span>
+      <span class="f">de</span>
+      <span class="b">Negócios</span>
+    </h1>
+    <p class="hsub">Domine <strong>Marketing e Vendas</strong> e assuma o controle da sua escala. Pare de depender de indicação e construa uma operação <strong>previsível e lucrativa</strong>.</p>
+    <div class="hbar">
+      <div class="pill"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><rect x="1" y="3" width="14" height="12" rx="2" stroke="var(--neon)" stroke-width="1.3"/><path d="M1 7h14M5 1v3M11 1v3" stroke="var(--neon)" stroke-width="1.3" stroke-linecap="round"/></svg>16 <span class="v">ABR · 2026</span></div>
+      <div class="pill"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><circle cx="8" cy="8" r="6.5" stroke="var(--neon)" stroke-width="1.3"/><path d="M8 4.5V8l2.5 2" stroke="var(--neon)" stroke-width="1.3" stroke-linecap="round"/></svg><span class="v">19h</span> às <span class="v">22h</span></div>
+      <div class="pill"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><path d="M8 1.5C5.51 1.5 3.5 3.51 3.5 6c0 3.5 4.5 8.5 4.5 8.5s4.5-5 4.5-8.5C12.5 3.51 10.49 1.5 8 1.5z" stroke="var(--neon)" stroke-width="1.3"/><circle cx="8" cy="6" r="1.5" fill="var(--neon)"/></svg><span class="v">Petrolina · PE</span></div>
+      <div class="pill"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><path d="M1.5 6a1.5 1.5 0 000 4V12.5h13V10a1.5 1.5 0 000-3V3.5H1.5V6z" stroke="var(--neon)" stroke-width="1.3"/></svg>Apenas <span class="v">R$ 47</span></div>
+    </div>
+    <div class="hcta">
+      <a href="https://pay.kiwify.com.br/vZnZSsQ" class="btnm" target="_blank" rel="noopener">Garantir minha vaga<span class="arr"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <p class="ph">Ingresso por apenas <strong>R$ 47</strong> · Vagas limitadas</p>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>scroll</span>
+    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<div class="cds sw">
+  <p class="cdl"><span class="cdp"></span>O workshop começa em</p>
+  <div class="cdt">
+    <div class="cdb"><span class="cdn" id="dd">00</span><span class="cdu">dias</span></div>
+    <div class="cdsp">:</div>
+    <div class="cdb"><span class="cdn" id="dh">00</span><span class="cdu">horas</span></div>
+    <div class="cdsp">:</div>
+    <div class="cdb"><span class="cdn" id="dm">00</span><span class="cdu">minutos</span></div>
+    <div class="cdsp">:</div>
+    <div class="cdb"><span class="cdn" id="ds">00</span><span class="cdu">segundos</span></div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<div class="pw sw">
+  <div class="pi">
+    <div>
+      <p class="st rv">O problema não é<br><span class="ac">falta de esforço.</span></p>
+      <p class="sd rv" style="transition-delay:.1s">É a falta de um método para transformar posicionamento em demanda, demanda em vendas — e vendas em escala.</p>
+      <ul class="pnl">
+        <li class="pni"><div class="pio"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2v7l4 4" stroke="#e05050" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="9" r="7" stroke="#e05050" stroke-width="1.4"/></svg></div><p class="pt"><strong>Dependência de indicação.</strong> Um mês entra cliente, no outro o movimento cai. Zero previsibilidade.</p></li>
+        <li class="pni" style="transition-delay:.1s"><div class="pio"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polyline points="2,14 6,8 10,11 14,4 16,6" stroke="#e05050" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 4h2v2" stroke="#e05050" stroke-width="1.6" stroke-linecap="round"/></svg></div><p class="pt"><strong>Marketing sem retorno.</strong> Você posta, anuncia, impulsiona… mas as vendas não crescem.</p></li>
+        <li class="pni" style="transition-delay:.2s"><div class="pio"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="8" width="12" height="8" rx="2" stroke="#e05050" stroke-width="1.4"/><path d="M6 8V6a3 3 0 016 0v2" stroke="#e05050" stroke-width="1.4" stroke-linecap="round"/></svg></div><p class="pt"><strong>Dono preso na operação.</strong> Se você parar, o negócio para. Depende demais de você.</p></li>
+        <li class="pni" style="transition-delay:.3s"><div class="pio"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#e05050" stroke-width="1.4"/><path d="M9 6v3" stroke="#e05050" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="12" r=".9" fill="#e05050"/></svg></div><p class="pt"><strong>Processo comercial desorganizado.</strong> Atrai interesse, mas não transforma em vendas.</p></li>
+      </ul>
+    </div>
+    <div class="bib rv"><p class="bil">A grande virada</p><p class="bit">Empresas locais não crescem com <span class="hl">ações isoladas.</span><br><br>Crescem quando organizam posicionamento, aquisição, conversão e escala em <span class="hl">um método.</span></p></div>
+  </div>
+</div>
+
+<!-- PACE -->
+<div class="sw">
+<section class="pcs">
+  <div class="pch rv"><p class="st">O <span class="ac">Método PACE</span></p><p class="sd" style="margin:0 auto">4 pilares que sustentam o crescimento de qualquer empresa local.</p></div>
+  <div class="pcg">
+    <div class="pcc"><span class="pcl">P</span><p class="pcn">Pilar 01</p><h3 class="pcname">Posicionamento</h3><p class="pcd">Sem diferencial claro, sua empresa compete por preço. Descubra como atrair os clientes certos.</p></div>
+    <div class="pcc"><span class="pcl">A</span><p class="pcn">Pilar 02</p><h3 class="pcname">Aquisição</h3><p class="pcd">Indicação não é estratégia. Construa canais de aquisição previsíveis todo mês.</p></div>
+    <div class="pcc"><span class="pcl">C</span><p class="pcn">Pilar 03</p><h3 class="pcname">Conversão</h3><p class="pcd">Atrair é metade. Estruture um processo que transforma interesse em vendas consistentes.</p></div>
+    <div class="pcc"><span class="pcl">E</span><p class="pcn">Pilar 04</p><h3 class="pcname">Escala</h3><p class="pcd">Organize o negócio para crescer sem depender só de você. Processos e estrutura.</p></div>
+  </div>
+</section>
+</div>
+
+<div class="dv"></div>
+
+<!-- LEARN -->
+<div class="lw sw">
+  <div class="li">
+    <div class="rv"><p class="st">O que você vai <span class="ac">aprender</span></p><p class="sd" style="margin-top:6px">Em 3 horas de workshop presencial, você sai com clareza, direção e plano de ação.</p></div>
+    <div class="lg">
+      <div class="lc"><div class="lck"><svg width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="lt"><strong>Diagnóstico do seu negócio</strong>Identifique em qual dos 4 pilares está o gargalo do seu crescimento hoje.</div></div>
+      <div class="lc"><div class="lck"><svg width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="lt"><strong>Como parar de depender de indicação</strong>Crie canais que geram demanda mesmo quando você não está presente.</div></div>
+      <div class="lc"><div class="lck"><svg width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="lt"><strong>Processo comercial que fecha</strong>Transforme contatos em clientes com consistência e método.</div></div>
+      <div class="lc"><div class="lck"><svg width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="lt"><strong>Posicionamento que atrai os certos</strong>Pare de competir por preço e seja escolhido pelo valor que entrega.</div></div>
+      <div class="lc"><div class="lck"><svg width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="lt"><strong>Como escalar sem ser o gargalo</strong>O que delegar para o negócio crescer sem depender de você.</div></div>
+      <div class="lc"><div class="lck"><svg width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="lt"><strong>Visão estratégica e próximos passos</strong>Saia com um mapa claro do que ajustar para crescer com previsibilidade.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SPEAKERS -->
+<div class="spk-section sw">
+  <div class="spk-inner">
+    <div class="rv"><p class="st">Quem vai <span class="ac">apresentar</span></p><p class="sd" style="margin-top:6px">Dois especialistas com experiência real em crescimento de empresas locais.</p></div>
+    <div class="spk-grid">
+
+      <div class="spk-card rv" style="transition-delay:.05s">
+        <div class="spk-img-wrap">
+          <img src="lucas.jpeg" alt="Tenente Lucas" class="spk-img" style="object-position:top center">
+        </div>
+        <div class="spk-body">
+          <p class="spk-num">Palestrante 01</p>
+          <h3 class="spk-name">Tenente Lucas</h3>
+          <div class="spk-tags">
+            <span class="spk-tag">Marketing &amp; Vendas</span>
+            <span class="spk-tag">Método PACE</span>
+            <span class="spk-tag">Estratégia</span>
+          </div>
+          <p class="spk-bio">Estrategista de Marketing e Vendas. Criador do Método PACE — a metodologia que organiza Posicionamento, Aquisição, Conversão e Escala para empresas locais.<br><br>Aplico no seu negócio a disciplina e a estratégia de quem vive o campo de batalha diariamente. <strong style="color:#fff">Transformo empresas desorganizadas em máquinas previsíveis de lucro.</strong></p>
+        </div>
+      </div>
+
+      <div class="spk-card rv" style="transition-delay:.15s">
+        <div class="spk-img-wrap">
+          <img src="rian.png" alt="Rian Mazille" class="spk-img">
+        </div>
+        <div class="spk-body">
+          <p class="spk-num">Palestrante 02</p>
+          <h3 class="spk-name">Rian Mazille</h3>
+          <div class="spk-tags">
+            <span class="spk-tag">Processo Comercial</span>
+            <span class="spk-tag">Escala</span>
+            <span class="spk-tag">Times de Vendas</span>
+          </div>
+          <p class="spk-bio">Referência em Processo Comercial e Escala para negócios locais. Co-criador do Método PACE, um sistema de crescimento de ponta a ponta que liberta o empresário da operação.<br><br>Especialista em estruturar times de vendas e sistemas de alta performance que crescem sem depender da presença do dono. <strong style="color:#fff">Estratégia direta para quem busca escala real.</strong></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOR WHO -->
+<section class="fws sw">
+  <p class="st rv">Para <span class="ac">quem é</span> esse workshop?</p>
+  <div class="fwg">
+    <div class="fwc fy rv">
+      <p class="fwt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#00e676" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="#00e676" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>É para você se...</p>
+      <ul class="fwl">
+        <li><span class="fwi"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#00e676" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Tem uma empresa local e quer crescer com previsibilidade</li>
+        <li><span class="fwi"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#00e676" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Se esforça muito mas os resultados não acompanham</li>
+        <li><span class="fwi"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#00e676" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Depende de indicação ou boca a boca para vender</li>
+        <li><span class="fwi"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#00e676" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Quer parar de ser escravo da operação</li>
+        <li><span class="fwi"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#00e676" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Busca clareza, método e resultado real</li>
+      </ul>
+    </div>
+    <div class="fwc fn rv" style="transition-delay:.15s">
+      <p class="fwt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="rgba(255,255,255,.28)" stroke-width="1.5"/><path d="M6 6l8 8M14 6l-8 8" stroke="rgba(255,255,255,.28)" stroke-width="1.7" stroke-linecap="round"/></svg>Não é para você se...</p>
+      <ul class="fwl">
+        <li><span class="fwi"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 3l8 8M11 3L3 11" stroke="rgba(255,255,255,.28)" stroke-width="1.6" stroke-linecap="round"/></svg></span>Quer só dicas genéricas de marketing</li>
+        <li><span class="fwi"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 3l8 8M11 3L3 11" stroke="rgba(255,255,255,.28)" stroke-width="1.6" stroke-linecap="round"/></svg></span>Não está disposto a implementar mudanças</li>
+        <li><span class="fwi"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 3l8 8M11 3L3 11" stroke="rgba(255,255,255,.28)" stroke-width="1.6" stroke-linecap="round"/></svg></span>Acha que o problema é só falta de tráfego</li>
+        <li><span class="fwi"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 3l8 8M11 3L3 11" stroke="rgba(255,255,255,.28)" stroke-width="1.6" stroke-linecap="round"/></svg></span>Quer fórmula mágica sem processo</li>
+        <li><span class="fwi"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 3l8 8M11 3L3 11" stroke="rgba(255,255,255,.28)" stroke-width="1.6" stroke-linecap="round"/></svg></span>Não tem compromisso com o crescimento</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EVENT DETAILS -->
+<div class="evd-section sw">
+  <div class="evd-inner">
+
+    <div class="evd-card rv">
+      <div class="evd-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="14" rx="2" stroke="var(--neon)" stroke-width="1.5"/><path d="M2 8h16M7 2v3M13 2v3" stroke="var(--neon)" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <p class="evd-label">Data</p>
+      <p class="evd-value">16 de Abril<br><span style="color:var(--neon)">2026</span></p>
+      <p class="evd-sub">Quinta-feira</p>
+    </div>
+
+    <div class="evd-card rv" style="transition-delay:.1s">
+      <div class="evd-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="var(--neon)" stroke-width="1.5"/><path d="M10 5.5V10l3 2.5" stroke="var(--neon)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <p class="evd-label">Horário</p>
+      <p class="evd-value">19h <span style="color:rgba(255,255,255,.3);font-size:.7em">às</span> 22h</p>
+      <p class="evd-sub">3 horas de conteúdo presencial</p>
+    </div>
+
+    <div class="evd-card rv" style="transition-delay:.2s">
+      <div class="evd-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C7.24 2 5 4.24 5 7c0 4.25 5 11 5 11s5-6.75 5-11c0-2.76-2.24-5-5-5z" stroke="var(--neon)" stroke-width="1.5"/><circle cx="10" cy="7" r="2" fill="var(--neon)"/></svg>
+      </div>
+      <p class="evd-label">Local</p>
+      <p class="evd-value">Auditório<br><span style="color:var(--neon)">Performance Cred</span></p>
+      <p class="evd-sub">Av. da Integração, 743A<br>Alto Cheiroso · Petrolina – PE<br>CEP 56328-010</p>
+      <a class="evd-map-link" href="https://www.google.com/maps/search/?api=1&query=Av.+da+Integração,+743A,+Petrolina,+PE" target="_blank" rel="noopener">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10l8-8M10 2H4M10 2v6" stroke="var(--neon)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Ver no Google Maps
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<div class="fcw sw" id="inscricao">
+  <div class="fcc">
+    <div class="rv"><p class="st">Garanta sua <span class="ac">vaga agora</span></p><p style="color:rgba(255,255,255,.55);font-size:18px;margin-top:12px;line-height:1.65">Em 3 horas, entenda o que está travando sua empresa e como usar os 4 pilares do Método PACE para atrair, converter e escalar.</p></div>
+    <div class="pbadge rv" style="transition-delay:.15s"><span class="pfrom">De R$ 197</span><span class="pmain">R$ 47</span><span class="psub">Ingresso presencial · Vagas limitadas</span></div>
+    <div class="rv" style="transition-delay:.28s">
+      <a href="https://pay.kiwify.com.br/vZnZSsQ" class="btnf" target="_blank" rel="noopener">Quero minha vaga<svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 11h12M13 7l4 4-4 4" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="gu"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="5" width="12" height="8" rx="2" stroke="rgba(255,255,255,.35)" stroke-width="1.2"/><path d="M4 5V4a3 3 0 016 0v1" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round"/></svg>Pagamento 100% seguro · 16 ABR · 19h às 22h · Av. da Integração, 743A · Petrolina – PE</div>
+    </div>
+  </div>
+</div>
+
+<!-- STICKY -->
+<div class="stk" id="sb">
+  <div class="si"><strong>Workshop Acelerador de Negócios</strong><span>16 ABR · 19h às 22h · Petrolina – PE</span></div>
+  <a href="https://pay.kiwify.com.br/vZnZSsQ" class="btns" target="_blank" rel="noopener">Garantir vaga · R$ 47 →</a>
+</div>
+<footer>Workshop Acelerador de Negócios · Método PACE · 16 de Abril de 2026 · 19h às 22h · Av. da Integração, 743A · Alto Cheiroso · Petrolina – PE</footer>
+
+<script>
+/* ═══════════════════════════════════════════════════════
+   BACKGROUND ENGINE v2
+   Layers (back→front):
+   1. Deep space gradient
+   2. Aurora plasma blobs (animated radial color clouds)
+   3. Perspective grid (infinite scroll to horizon)
+   4. Lightning bolts (random arc discharges)
+   5. Particle field with motion trails (3 depth layers + parallax)
+   6. Neural network (moving nodes + connecting lines)
+   7. Floating hex rings
+   8. Holographic scan sweep
+   9. Mouse ripple rings (on move + click)
+═══════════════════════════════════════════════════════ */
+(function(){
+  const C=document.getElementById('bg');
+  const X=C.getContext('2d');
+  let W,H,t=0;
+  let pts=[],nds=[],conns=[],hexes=[],bolts=[],ripples=[];
+  let MX=0.5,MY=0.5;
+
+  function resize(){
+    W=C.width=window.innerWidth;
+    H=C.height=window.innerHeight;
+    buildConns();
+  }
+
+  /* factories */
+  function mkPt(){return{x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:.3+Math.random()*1.2,ly:Math.floor(Math.random()*3),trail:[]};}
+  function mkNd(){return{x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.14,vy:(Math.random()-.5)*.14,r:1+Math.random()*2.2,ph:Math.random()*Math.PI*2};}
+  function mkHex(){return{ox:Math.random(),oy:Math.random(),r:18+Math.random()*44,sp:.06+Math.random()*.18,ph:Math.random()*Math.PI*2};}
+  function mkBolt(){
+    const pts2=[],sx=Math.random()*W;
+    let cx=sx,cy=0;
+    while(cy<H*.7){cy+=18+Math.random()*26;cx+=(Math.random()-.5)*58;pts2.push([cx,cy]);}
+    return{pts:pts2,life:1,decay:.016+Math.random()*.014,w:.4+Math.random()*.8};
+  }
+
+  function init(){
+    resize();
+    const n=Math.min(Math.floor(W*H/4600),200);
+    pts=Array.from({length:n},mkPt);
+    nds=Array.from({length:Math.floor(n*.2)},mkNd);
+    hexes=Array.from({length:8},mkHex);
+    buildConns();
+  }
+
+  function buildConns(){
+    conns=[];
+    if(!nds.length) return;
+    for(let i=0;i<nds.length;i++)
+      for(let j=i+1;j<nds.length;j++){
+        const dx=nds[i].x-nds[j].x,dy=nds[i].y-nds[j].y;
+        if(dx*dx+dy*dy<40000) conns.push([i,j]);
+      }
+  }
+
+  /* ── Layer 1: bg ── */
+  function drawBg(){
+    const g=X.createLinearGradient(0,0,W*.7,H);
+    g.addColorStop(0,'#010911');g.addColorStop(.5,'#020d1c');g.addColorStop(1,'#010a14');
+    X.fillStyle=g;X.fillRect(0,0,W,H);
+  }
+
+  /* ── Layer 2: aurora ── */
+  function drawAurora(){
+    const tm=t*.0007;
+    // blue top
+    const ax=W*(.5+Math.sin(tm*.7)*.22),ay=H*(-.04+Math.sin(tm*.4)*.07);
+    const ga=X.createRadialGradient(ax,ay,0,ax,ay,H*.72);
+    ga.addColorStop(0,`rgba(10,110,253,${.09+Math.sin(tm*1.3)*.03})`);
+    ga.addColorStop(.55,`rgba(0,80,200,${.04+Math.sin(tm*.8)*.015})`);
+    ga.addColorStop(1,'transparent');
+    X.fillStyle=ga;X.fillRect(0,0,W,H);
+    // neon right
+    const bx=W*(.82+Math.cos(tm*.6)*.1),by=H*(.28+Math.sin(tm*.5)*.14);
+    const gb=X.createRadialGradient(bx,by,0,bx,by,H*.42);
+    gb.addColorStop(0,`rgba(0,200,255,${.06+Math.sin(tm*1.1)*.025})`);
+    gb.addColorStop(1,'transparent');
+    X.fillStyle=gb;X.fillRect(0,0,W,H);
+    // deep left
+    const cx=W*(.14+Math.sin(tm*.5)*.09),cy=H*(.62+Math.cos(tm*.4)*.12);
+    const gc=X.createRadialGradient(cx,cy,0,cx,cy,H*.38);
+    gc.addColorStop(0,`rgba(0,50,180,${.07+Math.sin(tm*.9)*.02})`);
+    gc.addColorStop(1,'transparent');
+    X.fillStyle=gc;X.fillRect(0,0,W,H);
+    // bottom pulse
+    const dx=W*(.46+Math.cos(tm*.55)*.17),dy=H*(1.04+Math.sin(tm*.38)*.05);
+    const gd=X.createRadialGradient(dx,dy,0,dx,dy,H*.52);
+    gd.addColorStop(0,`rgba(0,180,255,${.07+Math.cos(tm*1.2)*.022})`);
+    gd.addColorStop(1,'transparent');
+    X.fillStyle=gd;X.fillRect(0,0,W,H);
+    // mouse reactive glow
+    const mx2=MX*W,my2=MY*H;
+    const gm=X.createRadialGradient(mx2,my2,0,mx2,my2,H*.3);
+    gm.addColorStop(0,'rgba(0,180,255,0.028)');
+    gm.addColorStop(1,'transparent');
+    X.fillStyle=gm;X.fillRect(0,0,W,H);
+  }
+
+  /* ── Layer 3: perspective grid ── */
+  function drawGrid(){
+    const hy=H*.5,vx=W*.5;
+    const spd=(t*.18)%(H*.033);
+    X.save();
+    for(let i=0;i<=16;i++){
+      const raw=hy+(i/16)*(H-hy)+spd;
+      if(raw<hy||raw>H) continue;
+      const p=(raw-hy)/(H-hy);
+      X.beginPath();X.moveTo(0,raw);X.lineTo(W,raw);
+      X.strokeStyle=`rgba(0,200,255,${p*.15})`;X.lineWidth=p*.8;X.stroke();
+    }
+    for(let i=0;i<=20;i++){
+      const bx=(i/20)*W,edge=Math.abs(i/20-.5)*2;
+      X.beginPath();X.moveTo(vx,hy);X.lineTo(bx,H);
+      X.strokeStyle=`rgba(0,200,255,${.022+edge*.038})`;X.lineWidth=.4;X.stroke();
+    }
+    // horizon glow
+    const hg=X.createLinearGradient(0,hy-1,0,hy+2);
+    hg.addColorStop(0,'transparent');
+    hg.addColorStop(.5,`rgba(0,220,255,${.17+Math.sin(t*.02)*.05})`);
+    hg.addColorStop(1,'transparent');
+    X.fillStyle=hg;X.fillRect(0,hy-1,W,3);
+    X.restore();
+  }
+
+  /* ── Layer 4: lightning ── */
+  function drawBolts(){
+    if(Math.random()<.003) bolts.push(mkBolt());
+    bolts=bolts.filter(b=>b.life>0);
+    bolts.forEach(b=>{
+      X.save();
+      X.globalAlpha=b.life;
+      // outer glow
+      X.shadowColor='rgba(0,200,255,1)';X.shadowBlur=8;
+      X.strokeStyle='rgba(80,210,255,.9)';X.lineWidth=b.w;
+      X.beginPath();X.moveTo(b.pts[0][0],0);
+      b.pts.forEach(p=>X.lineTo(p[0],p[1]));X.stroke();
+      // inner white core
+      X.shadowBlur=0;X.strokeStyle='rgba(255,255,255,.8)';X.lineWidth=b.w*.38;
+      X.beginPath();X.moveTo(b.pts[0][0],0);
+      b.pts.forEach(p=>X.lineTo(p[0],p[1]));X.stroke();
+      X.restore();
+      b.life-=b.decay;
+    });
+  }
+
+  /* ── Layer 5: particles ── */
+  const LSPD=[.5,.86,1.2],LSZ=[.35,.65,1.1],LAL=[.08,.18,.3];
+  function drawParticles(){
+    pts.forEach(p=>{
+      const px=p.x+(MX-.5)*p.ly*3.5;
+      const py=p.y+(MY-.5)*p.ly*2.5;
+      p.trail.push([px,py]);
+      if(p.trail.length>6) p.trail.shift();
+      // trail
+      for(let i=1;i<p.trail.length;i++){
+        const al=LAL[p.ly]*(i/p.trail.length)*.55;
+        X.beginPath();X.moveTo(p.trail[i-1][0],p.trail[i-1][1]);X.lineTo(p.trail[i][0],p.trail[i][1]);
+        X.strokeStyle=`rgba(0,200,255,${al})`;X.lineWidth=p.r*LSZ[p.ly]*.65;X.stroke();
+      }
+      X.beginPath();X.arc(px,py,p.r*LSZ[p.ly],0,Math.PI*2);
+      X.fillStyle=`rgba(0,200,255,${LAL[p.ly]})`;X.fill();
+      p.x+=p.vx*LSPD[p.ly];p.y+=p.vy*LSPD[p.ly];
+      if(p.x<-10)p.x=W+10;if(p.x>W+10)p.x=-10;
+      if(p.y<-10)p.y=H+10;if(p.y>H+10)p.y=-10;
+    });
+  }
+
+  /* ── Layer 6: neural net ── */
+  function drawNet(){
+    conns.forEach(([i,j])=>{
+      const a=nds[i],b=nds[j];
+      const d=Math.sqrt((a.x-b.x)**2+(a.y-b.y)**2);
+      X.beginPath();X.moveTo(a.x,a.y);X.lineTo(b.x,b.y);
+      X.strokeStyle=`rgba(0,180,255,${(1-d/200)*.13})`;X.lineWidth=.5;X.stroke();
+    });
+    nds.forEach(n=>{
+      n.ph+=.018;
+      const p=Math.sin(n.ph)*.5+.5;
+      const gr=X.createRadialGradient(n.x,n.y,0,n.x,n.y,n.r*6+p*4);
+      gr.addColorStop(0,`rgba(0,200,255,${.12*p})`);gr.addColorStop(1,'transparent');
+      X.beginPath();X.arc(n.x,n.y,n.r*6+p*4,0,Math.PI*2);X.fillStyle=gr;X.fill();
+      X.beginPath();X.arc(n.x,n.y,n.r,0,Math.PI*2);
+      X.fillStyle=`rgba(0,200,255,${.24+p*.3})`;X.fill();
+      n.x+=n.vx+(MX-.5)*.06;n.y+=n.vy+(MY-.5)*.04;
+      if(n.x<0)n.vx=Math.abs(n.vx);if(n.x>W)n.vx=-Math.abs(n.vx);
+      if(n.y<0)n.vy=Math.abs(n.vy);if(n.y>H)n.vy=-Math.abs(n.vy);
+    });
+  }
+
+  /* ── Layer 7: hexes ── */
+  function drawHexes(){
+    hexes.forEach(h=>{
+      const x=(h.ox+Math.sin(t*h.sp*.0042+h.ph)*.06)*W;
+      const y=(h.oy+Math.cos(t*h.sp*.0038+h.ph)*.06)*H;
+      const al=.024+Math.sin(t*h.sp*.009+h.ph)*.014;
+      for(let ring=0;ring<2;ring++){
+        const rr=h.r*(ring?0.52:1),ra=al*(ring?0.5:1);
+        X.save();X.globalAlpha=ra;
+        X.strokeStyle='rgba(0,200,255,1)';X.lineWidth=ring?.4:.75;
+        X.beginPath();
+        for(let i=0;i<6;i++){const a=(i/6)*Math.PI*2-Math.PI/6;i?X.lineTo(x+Math.cos(a)*rr,y+Math.sin(a)*rr):X.moveTo(x+Math.cos(a)*rr,y+Math.sin(a)*rr);}
+        X.closePath();X.stroke();X.restore();
+      }
+    });
+  }
+
+  /* ── Layer 8: scan ── */
+  function drawScan(){
+    const sy=(Math.sin(t*.0032)*.5+.5)*H;
+    const sg=X.createLinearGradient(0,sy-70,0,sy+70);
+    sg.addColorStop(0,'transparent');
+    sg.addColorStop(.5,`rgba(0,200,255,${.016+Math.sin(t*.01)*.005})`);
+    sg.addColorStop(1,'transparent');
+    X.fillStyle=sg;X.fillRect(0,sy-70,W,140);
+    X.fillStyle=`rgba(0,220,255,${.05+Math.sin(t*.015)*.018})`;
+    X.fillRect(0,sy-.5,W,1);
+  }
+
+  /* ── Layer 9: ripples ── */
+  function drawRipples(){
+    ripples=ripples.filter(r=>r.life>0);
+    ripples.forEach(r=>{
+      X.save();X.globalAlpha=r.life*.2;
+      X.strokeStyle='rgba(0,200,255,1)';X.lineWidth=.7;
+      X.beginPath();X.arc(r.x,r.y,r.r,0,Math.PI*2);X.stroke();
+      X.restore();
+      r.r+=2.5;r.life-=.025;
+    });
+  }
+
+  /* ── main loop ── */
+  function frame(){
+    X.clearRect(0,0,W,H);
+    drawBg();drawAurora();drawGrid();drawBolts();
+    drawParticles();drawNet();drawHexes();drawScan();drawRipples();
+    t++;requestAnimationFrame(frame);
+  }
+
+  window.addEventListener('resize',()=>{resize();});
+  document.addEventListener('mousemove',e=>{
+    MX=e.clientX/window.innerWidth;MY=e.clientY/window.innerHeight;
+    if(Math.random()<.07) ripples.push({x:e.clientX,y:e.clientY,r:4,life:1});
+  });
+  document.addEventListener('click',e=>{
+    for(let i=0;i<3;i++) ripples.push({x:e.clientX,y:e.clientY,r:2+i*7,life:1-.22*i});
+  });
+  init();frame();
+})();
+
+/* ═══ CURSOR ═══ */
+const cur=document.getElementById('cur'),cur2=document.getElementById('cur2');
+let cx=0,cy=0,lx=0,ly=0;
+document.addEventListener('mousemove',e=>{cx=e.clientX;cy=e.clientY;});
+(function loop(){
+  lx+=(cx-lx)*.14;ly+=(cy-ly)*.14;
+  cur.style.left=cx+'px';cur.style.top=cy+'px';
+  cur2.style.left=lx+'px';cur2.style.top=ly+'px';
+  requestAnimationFrame(loop);
+})();
+
+/* ═══ COUNTDOWN ═══ */
+const EV=new Date('2026-04-16T19:00:00-03:00');
+const pad=n=>String(Math.max(0,n)).padStart(2,'0');
+const prev={};
+function flip(id,val){
+  const el=document.getElementById(id);
+  if(prev[id]!==val){el.classList.remove('flip');void el.offsetWidth;el.classList.add('flip');prev[id]=val;}
+  el.textContent=val;
+}
+function tick(){
+  const d=EV-Date.now();
+  if(d<=0){['dd','dh','dm','ds'].forEach(k=>document.getElementById(k).textContent='00');return;}
+  flip('dd',pad(Math.floor(d/86400000)));
+  flip('dh',pad(Math.floor((d%86400000)/3600000)));
+  flip('dm',pad(Math.floor((d%3600000)/60000)));
+  flip('ds',pad(Math.floor((d%60000)/1000)));
+}
+tick();setInterval(tick,1000);
+
+/* ═══ REVEAL ═══ */
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});},{threshold:.1});
+document.querySelectorAll('.rv,.pni,.pcc,.lc').forEach(el=>obs.observe(el));
+document.querySelectorAll('.pcc').forEach((c,i)=>c.style.transitionDelay=(i*.1)+'s');
+document.querySelectorAll('.lc').forEach((c,i)=>c.style.transitionDelay=(i*.08)+'s');
+
+/* ═══ STICKY ═══ */
+new IntersectionObserver(e=>{document.getElementById('sb').classList.toggle('vis',!e[0].isIntersecting);},{threshold:0}).observe(document.querySelector('.hero'));
+</script>
+</body>
+</html>
