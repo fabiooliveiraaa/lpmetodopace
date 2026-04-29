@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workshop Acelerador de Negócios 2ª Edição | Método PACE</title>
+
+<!-- Facebook Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','950564450751048');
+fbq('track','PageView');
+fbq('track','ViewContent',{content_name:'Workshop Acelerador de Negócios 2ª Edição',content_category:'Evento Presencial',value:47.00,currency:'BRL'});
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=950564450751048&ev=PageView&noscript=1"/></noscript>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07090f;
+  --bg2:#0b0e18;
+  --gold:#c8862a;
+  --gold2:#e8a84a;
+  --gold3:#f5c86a;
+  --goldglow:rgba(200,134,42,.22);
+  --neon:#00aaff;
+  --neonglow:rgba(0,170,255,.18);
+  --white:#fff;
+  --gray:#8a96aa;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:'Barlow',sans-serif;overflow-x:hidden;cursor:none}
+
+/* ── CURSOR ── */
+#cur{position:fixed;width:11px;height:11px;border-radius:50%;background:var(--gold2);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen;box-shadow:0 0 10px var(--gold2),0 0 22px rgba(200,134,42,.5)}
+#cur2{position:fixed;width:34px;height:34px;border-radius:50%;border:1px solid rgba(200,134,42,.4);pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .2s,height .2s,border-color .2s}
+body:has(a:hover) #cur2{width:50px;height:50px;border-color:rgba(232,168,74,.7)}
+@media(pointer:coarse){#cur,#cur2{display:none}body{cursor:auto}}
+
+#bg{position:fixed;inset:0;z-index:0;pointer-events:none}
+
+/* ── HERO ── */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px 80px;text-align:center;z-index:2}
+.hc{position:relative;z-index:3;max-width:960px}
+
+/* edition badge */
+.edition-badge{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,rgba(200,134,42,.15),rgba(245,200,106,.08));border:1px solid rgba(200,134,42,.45);color:var(--gold3);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;letter-spacing:4px;text-transform:uppercase;padding:9px 26px;border-radius:100px;margin-bottom:20px;animation:fD .7s ease forwards;opacity:0;box-shadow:0 0 20px rgba(200,134,42,.12)}
+.edition-dot{width:7px;height:7px;background:var(--gold2);border-radius:50%;animation:bk 1.4s ease-in-out infinite;box-shadow:0 0 8px var(--gold2)}
+@keyframes bk{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.6)}}
+
+.hlabel{font-family:'Barlow Condensed',sans-serif;font-size:clamp(13px,2.5vw,17px);font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--gold2);margin-bottom:14px;animation:fD .7s .15s ease forwards;opacity:0}
+
+/* glitch for gold text */
+@keyframes glitch1{0%,90%,100%{clip-path:none;transform:none}92%{clip-path:polygon(0 18%,100% 18%,100% 34%,0 34%);transform:translate(-4px,0)}94%{clip-path:polygon(0 58%,100% 58%,100% 74%,0 74%);transform:translate(4px,0)}96%{clip-path:none}}
+@keyframes glitch2{0%,88%,100%{opacity:0}89%{opacity:.35;clip-path:polygon(0 38%,100% 38%,100% 54%,0 54%);transform:translate(5px,0)}91%{opacity:0}}
+
+.htitle{font-family:'Barlow Condensed',sans-serif;font-size:clamp(52px,11vw,112px);font-weight:900;line-height:.88;text-transform:uppercase;letter-spacing:-2px;margin-bottom:24px;animation:fU .8s .25s ease forwards;opacity:0}
+.htitle .o{-webkit-text-stroke:2px rgba(200,134,42,.5);color:rgba(200,134,42,.07);display:block;text-shadow:0 0 40px rgba(200,134,42,.1)}
+.htitle .f{color:var(--white);display:block}
+.htitle .g{display:block;position:relative;background:linear-gradient(180deg,var(--gold3) 0%,var(--gold) 60%,#a06020 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 30px rgba(200,134,42,.6)) drop-shadow(0 0 60px rgba(200,134,42,.25));animation:glitch1 9s ease-in-out infinite}
+.htitle .g::after{content:'Negócios';position:absolute;top:0;left:0;right:0;background:linear-gradient(180deg,rgba(245,200,106,.4),transparent);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:glitch2 9s ease-in-out infinite}
+
+.hsub{font-size:clamp(15px,2.2vw,20px);color:rgba(255,255,255,.62);max-width:580px;margin:0 auto 40px;line-height:1.65;animation:fU .8s .4s ease forwards;opacity:0}
+.hsub strong{color:#fff}
+
+.hbar{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:46px;animation:fU .8s .55s ease forwards;opacity:0}
+.pill{display:flex;align-items:center;gap:8px;background:rgba(200,134,42,.06);border:1px solid rgba(200,134,42,.22);padding:10px 18px;border-radius:8px;font-size:13px;font-weight:600;transition:border-color .3s,background .3s}
+.pill:hover{border-color:rgba(200,134,42,.45);background:rgba(200,134,42,.1)}
+.pill .v{color:var(--gold3)}
+
+.hcta{animation:fU .8s .7s ease forwards;opacity:0;display:flex;flex-direction:column;align-items:center;gap:13px}
+.btnm{display:inline-flex;align-items:center;gap:14px;background:linear-gradient(135deg,#a06020,var(--gold2),var(--gold3));color:#07090f;font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;letter-spacing:1px;text-transform:uppercase;padding:20px 52px;border-radius:6px;text-decoration:none;position:relative;overflow:hidden;box-shadow:0 8px 40px rgba(200,134,42,.4),0 0 80px rgba(200,134,42,.12);transition:transform .2s,box-shadow .2s}
+.btnm::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.15) 100%)}
+.btnm::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);animation:sh 3.5s ease-in-out infinite}
+.btnm:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 14px 60px rgba(200,134,42,.6),0 0 120px rgba(200,134,42,.25)}
+.arr{display:inline-flex;align-items:center;transition:transform .2s}
+.btnm:hover .arr{transform:translateX(6px)}
+.ph{font-size:14px;color:rgba(255,255,255,.38)}
+.ph strong{color:var(--gold3);font-size:17px}
+@keyframes sh{0%,100%{left:-120%}45%,55%{left:160%}}
+
+.scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;animation:fU .8s 1.2s ease forwards;opacity:0}
+.scroll-hint span{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.24)}
+.scroll-mouse{width:22px;height:34px;border:1px solid rgba(200,134,42,.25);border-radius:11px;display:flex;justify-content:center;padding-top:7px}
+.scroll-wheel{width:3px;height:7px;background:var(--gold2);border-radius:2px;animation:scrollY 1.8s ease-in-out infinite;box-shadow:0 0 6px var(--gold2)}
+@keyframes scrollY{0%{transform:translateY(0);opacity:1}100%{transform:translateY(10px);opacity:0}}
+
+/* ── COUNTDOWN ── */
+.cds{position:relative;z-index:2;padding:56px 20px;text-align:center;background:rgba(11,14,24,.8);border-top:1px solid rgba(200,134,42,.1);border-bottom:1px solid rgba(200,134,42,.1);backdrop-filter:blur(6px)}
+.cdl{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--gold2);margin-bottom:24px;display:flex;align-items:center;justify-content:center;gap:10px}
+.cdp{width:7px;height:7px;background:var(--gold2);border-radius:50%;animation:bk 1.4s ease-in-out infinite;box-shadow:0 0 8px var(--gold2)}
+.cdt{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+.cdb{display:flex;flex-direction:column;align-items:center;min-width:88px}
+.cdn{font-family:'Barlow Condensed',sans-serif;font-size:clamp(48px,8vw,80px);font-weight:900;line-height:1;background:linear-gradient(180deg,var(--gold3) 0%,var(--gold) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;text-align:center;min-width:2ch}
+.cdn.flip{animation:flip .32s ease}
+@keyframes flip{0%{transform:scaleY(1);opacity:1}48%{transform:scaleY(0);opacity:.2}100%{transform:scaleY(1);opacity:1}}
+.cdu{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gray);margin-top:5px}
+.cdsp{font-family:'Barlow Condensed',sans-serif;font-size:58px;font-weight:900;color:var(--gold2);margin-bottom:18px;opacity:.35;animation:bk 1s ease-in-out infinite}
+
+/* ── SECTIONS ── */
+.sw{position:relative;z-index:2}
+.st{font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,7vw,58px);font-weight:900;text-transform:uppercase;line-height:1;margin-bottom:14px}
+.st .ac{background:linear-gradient(135deg,var(--gold2),var(--gold3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sd{font-size:17px;color:rgba(255,255,255,.52);line-height:1.72;max-width:540px}
+
+/* ── PROVA SOCIAL 1ª EDIÇÃO ── */
+.ps1-section{padding:90px 20px;background:rgba(11,14,24,.75);border-top:1px solid rgba(200,134,42,.08);border-bottom:1px solid rgba(200,134,42,.08);backdrop-filter:blur(6px)}
+.ps1-inner{max-width:1100px;margin:0 auto}
+.ps1-header{margin-bottom:52px}
+.ps1-stamp{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(200,134,42,.12),rgba(245,200,106,.06));border:1px solid rgba(200,134,42,.3);color:var(--gold3);font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:800;letter-spacing:4px;text-transform:uppercase;padding:6px 18px;border-radius:100px;margin-bottom:16px}
+.ps1-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:680px){.ps1-grid{grid-template-columns:1fr}}
+.ps1-img-card{border-radius:14px;overflow:hidden;position:relative;border:1px solid rgba(200,134,42,.15);transition:border-color .35s,transform .35s,box-shadow .35s}
+.ps1-img-card:hover{border-color:rgba(200,134,42,.4);transform:translateY(-5px);box-shadow:0 20px 60px rgba(200,134,42,.12)}
+.ps1-img-card img{width:100%;height:320px;object-fit:cover;object-position:center 20%;display:block;filter:brightness(.88) contrast(1.05);transition:filter .4s,transform .4s}
+.ps1-img-card:hover img{filter:brightness(.95) contrast(1.08);transform:scale(1.03)}
+.ps1-img-card::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,9,15,.7) 0%,transparent 50%)}
+.ps1-caption{position:absolute;bottom:0;left:0;right:0;padding:20px 22px;z-index:1}
+.ps1-caption strong{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:800;text-transform:uppercase;display:block;color:#fff}
+.ps1-caption span{font-size:12px;color:rgba(255,255,255,.5);letter-spacing:1px}
+.ps1-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+@media(max-width:560px){.ps1-stats{grid-template-columns:1fr}}
+.ps1-stat{background:rgba(200,134,42,.05);border:1px solid rgba(200,134,42,.18);border-radius:10px;padding:22px 20px;text-align:center}
+.ps1-stat-num{font-family:'Barlow Condensed',sans-serif;font-size:clamp(34px,5vw,48px);font-weight:900;background:linear-gradient(135deg,var(--gold2),var(--gold3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.ps1-stat-label{font-size:13px;color:rgba(255,255,255,.5);margin-top:6px;letter-spacing:.5px}
+
+/* ── PROBLEM ── */
+.pw{padding:90px 20px;background:rgba(11,14,24,.7);border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);backdrop-filter:blur(6px)}
+.pi{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+@media(max-width:768px){.pi{grid-template-columns:1fr;gap:40px}}
+.pnl{list-style:none;margin-top:34px}
+.pni{display:flex;align-items:flex-start;gap:14px;padding:17px 0;border-bottom:1px solid rgba(255,255,255,.05);opacity:0;transform:translateX(-28px);transition:opacity .5s,transform .5s}
+.pni.vis{opacity:1;transform:none}
+.pio{width:38px;height:38px;background:rgba(220,60,60,.09);border:1px solid rgba(220,60,60,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.pt{font-size:15px;color:rgba(255,255,255,.7);line-height:1.55}
+.pt strong{color:#fff}
+.bib{background:linear-gradient(135deg,rgba(200,134,42,.07),rgba(245,200,106,.04));border:1px solid rgba(200,134,42,.22);border-radius:16px;padding:44px 36px;position:relative;overflow:hidden}
+.bib::before{content:'';position:absolute;top:-40%;right:-20%;width:300px;height:300px;background:radial-gradient(circle,rgba(200,134,42,.08) 0%,transparent 70%);animation:pglow 4s ease-in-out infinite}
+@keyframes pglow{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.1)}}
+.bil{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold2);margin-bottom:16px}
+.bit{font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,3.5vw,32px);font-weight:800;line-height:1.25;text-transform:uppercase}
+.bit .hl{background:linear-gradient(135deg,var(--gold2),var(--gold3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ── PACE ── */
+.pcs{padding:90px 20px;max-width:1100px;margin:0 auto}
+.pch{text-align:center;margin-bottom:60px}
+.pcg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media(max-width:900px){.pcg{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.pcg{grid-template-columns:1fr}}
+.pcc{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:30px 22px;position:relative;overflow:hidden;transition:border-color .35s,transform .35s,box-shadow .35s;opacity:0;transform:translateY(38px)}
+.pcc.vis{opacity:1;transform:none}
+.pcc:hover{border-color:rgba(200,134,42,.5);transform:translateY(-8px);box-shadow:0 24px 60px rgba(200,134,42,.12),inset 0 0 30px rgba(200,134,42,.03)}
+.pcc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold3));transform:scaleX(0);transition:transform .35s;transform-origin:left}
+.pcc:hover::after{transform:scaleX(1)}
+.pcc::before{content:'';position:absolute;top:0;right:0;width:36px;height:36px;border-top:1px solid rgba(200,134,42,0);border-right:1px solid rgba(200,134,42,0);transition:border-color .35s}
+.pcc:hover::before{border-top-color:rgba(200,134,42,.5);border-right-color:rgba(200,134,42,.5)}
+.pcl{font-family:'Barlow Condensed',sans-serif;font-size:72px;font-weight:900;line-height:1;color:rgba(200,134,42,.13);-webkit-text-stroke:1px rgba(200,134,42,.45);position:absolute;top:10px;right:16px;transition:all .35s;text-shadow:0 0 20px rgba(200,134,42,.15)}
+.pcc:hover .pcl{color:rgba(200,134,42,.22);-webkit-text-stroke:1px rgba(200,134,42,.7);text-shadow:0 0 30px rgba(200,134,42,.3)}
+.pcn{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);margin-bottom:10px}
+.pcname{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;text-transform:uppercase;margin-bottom:10px}
+.pcd{font-size:13.5px;color:rgba(255,255,255,.5);line-height:1.62}
+
+/* ── LEARN ── */
+.lw{padding:90px 20px;background:rgba(11,14,24,.7);border-top:1px solid rgba(255,255,255,.04);backdrop-filter:blur(6px)}
+.li{max-width:1100px;margin:0 auto}
+.lg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+@media(max-width:768px){.lg{grid-template-columns:1fr}}
+.lc{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:26px 22px;display:flex;gap:14px;align-items:flex-start;opacity:0;transform:translateY(28px);transition:opacity .5s,transform .5s,border-color .3s}
+.lc.vis{opacity:1;transform:none}
+.lc:hover{border-color:rgba(200,134,42,.3)}
+.lck{width:26px;height:26px;background:linear-gradient(135deg,var(--gold),var(--gold3));border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.lt{font-size:14.5px;color:rgba(255,255,255,.7);line-height:1.58}
+.lt strong{color:#fff;display:block;margin-bottom:3px;font-size:15px}
+
+/* ── SPEAKERS ── */
+.spk-section{padding:90px 20px;background:rgba(11,14,24,.7);border-top:1px solid rgba(255,255,255,.04);backdrop-filter:blur(6px)}
+.spk-inner{max-width:1100px;margin:0 auto}
+.spk-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:56px}
+@media(max-width:680px){.spk-grid{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}}
+.spk-card{border-radius:16px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.02);overflow:hidden;display:flex;flex-direction:column;transition:border-color .35s,transform .35s,box-shadow .35s;position:relative}
+.spk-card:hover{border-color:rgba(200,134,42,.4);transform:translateY(-6px);box-shadow:0 24px 60px rgba(200,134,42,.1)}
+.spk-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold3));transform:scaleX(0);transition:transform .35s;transform-origin:left}
+.spk-card:hover::after{transform:scaleX(1)}
+.spk-img-wrap{position:relative;height:420px;overflow:hidden;background:#0a0c14}
+.spk-img-wrap::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(0deg,rgba(7,9,15,1) 0%,transparent 100%)}
+.spk-img-wrap::before{content:'';position:absolute;inset:0;box-shadow:inset 0 0 40px rgba(200,134,42,.05);z-index:1;pointer-events:none;transition:box-shadow .35s}
+.spk-card:hover .spk-img-wrap::before{box-shadow:inset 0 0 60px rgba(200,134,42,.1)}
+.spk-img{width:100%;height:100%;object-fit:cover;filter:grayscale(15%) contrast(1.05);transition:transform .5s,filter .5s}
+.spk-card:hover .spk-img{transform:scale(1.04);filter:grayscale(0%) contrast(1.08)}
+.spk-body{padding:28px 28px 32px}
+.spk-num{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold2);margin-bottom:8px}
+.spk-name{font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,4vw,38px);font-weight:900;text-transform:uppercase;line-height:1;margin-bottom:14px}
+.spk-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.spk-tag{font-size:12px;font-weight:600;letter-spacing:.5px;padding:5px 13px;border-radius:100px;background:rgba(200,134,42,.08);border:1px solid rgba(200,134,42,.25);color:var(--gold3)}
+.spk-bio{font-size:14.5px;color:rgba(255,255,255,.58);line-height:1.65}
+
+/* ── FOR WHO ── */
+.fws{padding:90px 20px;max-width:1100px;margin:0 auto}
+.fwg{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:48px}
+@media(max-width:600px){.fwg{grid-template-columns:1fr}}
+.fwc{border-radius:12px;padding:34px 30px}
+.fy{background:linear-gradient(135deg,rgba(0,200,100,.05),rgba(200,134,42,.05));border:1px solid rgba(0,200,100,.16)}
+.fn{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06)}
+.fwt{font-family:'Barlow Condensed',sans-serif;font-size:21px;font-weight:900;text-transform:uppercase;margin-bottom:22px;display:flex;align-items:center;gap:10px}
+.fy .fwt{color:#00e676}
+.fn .fwt{color:rgba(255,255,255,.3)}
+.fwl{list-style:none}
+.fwl li{display:flex;gap:12px;align-items:flex-start;padding:9px 0;font-size:14.5px;color:rgba(255,255,255,.66);border-bottom:1px solid rgba(255,255,255,.04)}
+.fwl li:last-child{border:none}
+.fwi{display:flex;align-items:center;width:20px;height:20px;flex-shrink:0;margin-top:1px}
+
+/* ── TESTIMONIALS ── */
+.tst-section{padding:90px 20px;max-width:1100px;margin:0 auto}
+.tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+@media(max-width:900px){.tst-grid{grid-template-columns:1fr}}
+.tst-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:32px 28px;display:flex;flex-direction:column;gap:20px;position:relative;overflow:hidden;transition:border-color .35s,transform .35s,box-shadow .35s;opacity:0;transform:translateY(36px)}
+.tst-card.vis{opacity:1;transform:none}
+.tst-card:hover{border-color:rgba(200,134,42,.3);transform:translateY(-5px);box-shadow:0 20px 50px rgba(200,134,42,.07)}
+.tst-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold3));transform:scaleX(0);transition:transform .4s;transform-origin:left}
+.tst-card:hover::before{transform:scaleX(1)}
+.tst-card::after{content:'\201C';position:absolute;top:-10px;right:20px;font-size:120px;line-height:1;color:rgba(200,134,42,.07);font-family:'Barlow Condensed',sans-serif;font-weight:900;pointer-events:none}
+.tst-stars{display:flex;gap:4px}
+.tst-star{color:var(--gold2);font-size:15px;text-shadow:0 0 8px rgba(200,134,42,.6)}
+.tst-text{font-size:15px;color:rgba(255,255,255,.72);line-height:1.7;font-style:italic;flex:1}
+.tst-text strong{color:var(--white);font-style:normal}
+.tst-author{display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,.06);padding-top:18px}
+.tst-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold3));display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:900;color:#07090f;flex-shrink:0;box-shadow:0 0 16px rgba(200,134,42,.3)}
+.tst-info strong{display:block;font-size:14px;font-weight:700;color:var(--white)}
+.tst-info span{font-size:12px;color:rgba(255,255,255,.38);letter-spacing:.5px}
+.tst-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(200,134,42,.07);border:1px solid rgba(200,134,42,.22);border-radius:100px;padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold3);margin-bottom:4px;align-self:flex-start}
+
+/* ── EVENT DETAILS ── */
+.evd-section{padding:70px 20px;background:rgba(11,14,24,.75);border-top:1px solid rgba(200,134,42,.08);border-bottom:1px solid rgba(200,134,42,.08);backdrop-filter:blur(6px)}
+.evd-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+@media(max-width:768px){.evd-inner{grid-template-columns:1fr;max-width:480px}}
+.evd-card{border:1px solid rgba(200,134,42,.14);border-radius:12px;padding:28px 24px;background:rgba(200,134,42,.03);display:flex;flex-direction:column;gap:10px;transition:border-color .3s,transform .3s}
+.evd-card:hover{border-color:rgba(200,134,42,.35);transform:translateY(-4px)}
+.evd-icon{width:44px;height:44px;border-radius:10px;background:rgba(200,134,42,.08);border:1px solid rgba(200,134,42,.22);display:flex;align-items:center;justify-content:center;margin-bottom:4px}
+.evd-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold2)}
+.evd-value{font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,3vw,28px);font-weight:900;text-transform:uppercase;line-height:1.1}
+.evd-sub{font-size:13px;color:rgba(255,255,255,.45);line-height:1.5}
+.evd-map-link{display:inline-flex;align-items:center;gap:6px;margin-top:4px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold2);text-decoration:none;transition:opacity .2s}
+.evd-map-link:hover{opacity:.7}
+
+/* ── FINAL CTA ── */
+.fcw{padding:100px 20px;text-align:center;position:relative;overflow:hidden;background:rgba(11,14,24,.85);border-top:1px solid rgba(200,134,42,.1);z-index:2;backdrop-filter:blur(8px)}
+.fcw::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(200,134,42,.07) 0%,transparent 70%)}
+.fcc{position:relative;z-index:1;max-width:700px;margin:0 auto}
+.pbadge{display:inline-flex;flex-direction:column;align-items:center;background:rgba(200,134,42,.05);border:1px solid rgba(200,134,42,.28);border-radius:12px;padding:18px 44px;margin:34px auto}
+.pfrom{font-size:12px;color:rgba(255,255,255,.35);text-decoration:line-through;letter-spacing:1px}
+.pmain{font-family:'Barlow Condensed',sans-serif;font-size:68px;font-weight:900;background:linear-gradient(180deg,var(--gold3),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;filter:drop-shadow(0 0 20px rgba(200,134,42,.4))}
+.psub{font-size:12px;color:rgba(255,255,255,.42);letter-spacing:1px}
+.btnf{display:inline-flex;align-items:center;gap:14px;background:linear-gradient(135deg,#a06020,var(--gold2),var(--gold3));color:#07090f;font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;letter-spacing:1px;text-transform:uppercase;padding:24px 62px;border-radius:8px;text-decoration:none;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s;animation:cp 2.5s ease-in-out infinite}
+@keyframes cp{0%,100%{box-shadow:0 10px 50px rgba(200,134,42,.45),0 0 100px rgba(200,134,42,.15)}50%{box-shadow:0 10px 70px rgba(200,134,42,.65),0 0 140px rgba(200,134,42,.28)}}
+.btnf:hover{transform:translateY(-4px) scale(1.03);animation:none;box-shadow:0 16px 80px rgba(200,134,42,.65)}
+.btnf::after{content:'';position:absolute;top:0;left:-120%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);animation:sh 3s ease-in-out infinite}
+.gu{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:22px;font-size:12px;color:rgba(255,255,255,.36);flex-wrap:wrap;text-align:center}
+
+/* ── STICKY ── */
+.stk{position:fixed;bottom:0;left:0;right:0;background:rgba(7,9,15,.96);backdrop-filter:blur(20px);border-top:1px solid rgba(200,134,42,.18);padding:13px 24px;display:flex;align-items:center;justify-content:space-between;gap:14px;z-index:999;transform:translateY(100%);transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.stk.vis{transform:translateY(0)}
+@media(max-width:580px){.stk{flex-direction:column;padding:11px 18px}}
+.si strong{display:block;font-family:'Barlow Condensed',sans-serif;font-size:17px;text-transform:uppercase}
+.si span{color:rgba(255,255,255,.42);font-size:12px}
+.btns{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#a06020,var(--gold2),var(--gold3));color:#07090f;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:900;text-transform:uppercase;letter-spacing:1px;padding:11px 30px;border-radius:6px;text-decoration:none;white-space:nowrap;transition:transform .2s}
+.btns:hover{transform:scale(1.04)}
+
+.dv{height:1px;background:linear-gradient(90deg,transparent,rgba(200,134,42,.25),transparent);max-width:800px;margin:0 auto;position:relative;z-index:2}
+.rv{opacity:0;transform:translateY(38px);transition:opacity .7s ease,transform .7s ease}
+.rv.vis{opacity:1;transform:none}
+footer{text-align:center;padding:28px 20px 100px;font-size:11px;color:rgba(255,255,255,.16);letter-spacing:1px;position:relative;z-index:2}
+@keyframes fD{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:none}}
+@keyframes fU{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+
+/* ══ MOBILE ══ */
+@media(max-width:480px){
+  .hero{padding:80px 20px 90px;min-height:100svh}
+  .htitle .g::after{display:none}
+  .hsub{font-size:16px;margin-bottom:32px}
+  .hbar{gap:8px}
+  .pill{font-size:12px;padding:9px 13px;gap:6px}
+  .btnm{font-size:19px;padding:17px 22px;width:100%;justify-content:center;border-radius:8px}
+  .scroll-hint{display:none}
+  .cds{padding:40px 16px}
+  .cdb{min-width:68px}
+  .cdn{font-size:clamp(38px,12vw,56px)}
+  .cdsp{font-size:40px}
+  .pw{padding:60px 16px}
+  .pcs{padding:60px 16px}
+  .lw{padding:60px 16px}
+  .spk-section{padding:60px 16px}
+  .spk-grid{max-width:100%}
+  .spk-img-wrap{height:300px}
+  .spk-body{padding:22px 20px 26px}
+  .spk-name{font-size:clamp(24px,7vw,32px)}
+  .fws{padding:60px 16px}
+  .fwg{gap:14px;margin-top:32px}
+  .fwc{padding:26px 20px}
+  .tst-section{padding:60px 16px}
+  .tst-grid{gap:14px;margin-top:32px}
+  .tst-card{padding:24px 20px}
+  .tst-text{font-size:14px}
+  .ps1-section{padding:60px 16px}
+  .ps1-img-card img{height:240px}
+  .ps1-stats{grid-template-columns:1fr 1fr}
+  .evd-section{padding:50px 16px}
+  .evd-card{flex-direction:row;align-items:flex-start;gap:16px}
+  .evd-icon{flex-shrink:0;margin-bottom:0}
+  .fcw{padding:70px 16px}
+  .pbadge{padding:16px 28px}
+  .pmain{font-size:52px}
+  .btnf{font-size:20px;padding:20px 22px;width:100%;justify-content:center}
+  .stk{padding:10px 16px}
+  .btns{width:100%;justify-content:center}
+}
+@media(min-width:481px) and (max-width:768px){
+  .pw{padding:70px 24px}.pcs{padding:70px 24px}.lw{padding:70px 24px}
+  .spk-section{padding:70px 24px}.fws{padding:70px 24px}
+  .tst-section{padding:70px 24px}.ps1-section{padding:70px 24px}
+  .evd-section{padding:56px 24px}.fcw{padding:80px 24px}
+  .evd-inner{grid-template-columns:1fr 1fr}
+  .evd-card:last-child{grid-column:1/-1}
+  .spk-img-wrap{height:360px}
+  .ps1-img-card img{height:280px}
+}
+</style>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur2"></div>
+<canvas id="bg"></canvas>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hc">
+    <div class="edition-badge"><span class="edition-dot"></span>2ª Edição · Método PACE</div>
+    <p class="hlabel">Workshop · Acelerador de Negócios</p>
+    <h1 class="htitle">
+      <span class="o">Acelerador</span>
+      <span class="f">de</span>
+      <span class="g">Negócios</span>
+    </h1>
+    <p class="hsub">Domine <strong>Marketing e Vendas</strong> e assuma o controle da sua Escala. Pare de depender de indicação e construa uma operação <strong>previsível e lucrativa</strong>.</p>
+    <div class="hbar">
+      <div class="pill"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><rect x="1" y="3" width="14" height="12" rx="2" stroke="var(--gold2)" stroke-width="1.3"/><path d="M1 7h14M5 1v3M11 1v3" stroke="var(--gold2)" stroke-width="1.3" stroke-linecap="round"/></svg>26 <span class="v">MAI · 2026</span></div>
+      <div class="pill"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><circle cx="8" cy="8" r="6.5" stroke="var(--gold2)" stroke-width="1.3"/><path d="M8 4.5V8l2.5 2" stroke="var(--gold2)" stroke-width="1.3" stroke-linecap="round"/></svg><span class="v">19h</span> às <span class="v">22h</span></div>
+      <div class="pill"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><path d="M8 1.5C5.51 1.5 3.5 3.51 3.5 6c0 3.5 4.5 8.5 4.5 8.5s4.5-5 4.5-8.5C12.5 3.51 10.49 1.5 8 1.5z" stroke="var(--gold2)" stroke-width="1.3"/><circle cx="8" cy="6" r="1.5" fill="var(--gold2)"/></svg><span class="v">Petrolina · PE</span></div>
+      <div class="pill"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><path d="M1.5 6a1.5 1.5 0 000 4V12.5h13V10a1.5 1.5 0 000-3V3.5H1.5V6z" stroke="var(--gold2)" stroke-width="1.3"/></svg>Apenas <span class="v">R$ 47</span></div>
+    </div>
+    <div class="hcta">
+      <a href="https://wa.me/+5574981045355?text=Ol%C3%A1,%20tenho%20interesse%20no%20Workshop%20Acelerador%20de%20Neg%C3%B3cios" class="btnm" target="_blank" rel="noopener">💬 Garantir minha vaga<span class="arr"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="#07090f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <p class="ph">Ingresso por apenas <strong>R$ 47</strong> · Vagas limitadas</p>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>scroll</span>
+    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<div class="cds sw">
+  <p class="cdl"><span class="cdp"></span>O workshop começa em</p>
+  <div class="cdt">
+    <div class="cdb"><span class="cdn" id="dd">00</span><span class="cdu">dias</span></div>
+    <div class="cdsp">:</div>
+    <div class="cdb"><span class="cdn" id="dh">00</span><span class="cdu">horas</span></div>
+    <div class="cdsp">:</div>
+    <div class="cdb"><span class="cdn" id="dm">00</span><span class="cdu">minutos</span></div>
+    <div class="cdsp">:</div>
+    <div class="cdb"><span class="cdn" id="ds">00</span><span class="cdu">segundos</span></div>
+  </div>
+</div>
+
+<!-- PROVA SOCIAL 1ª EDIÇÃO -->
+<div class="ps1-section sw">
+  <div class="ps1-inner">
+    <div class="ps1-header rv">
+      <div class="ps1-stamp">⭐ 1ª Edição · Já aconteceu</div>
+      <p class="st">A <span class="ac">1ª Edição</span> lotou.<br>A 2ª já está chegando.</p>
+      <p class="sd" style="margin-top:10px">Veja como foi o evento que transformou empresários locais de Petrolina.</p>
+    </div>
+    <div class="ps1-grid">
+      <div class="ps1-img-card rv" style="transition-delay:.08s">
+        <img src="edicao1_a.jpeg" alt="1ª Edição Workshop - auditório lotado">
+        <div class="ps1-caption">
+          <strong>Auditório lotado</strong>
+          <span>1ª Edição · Petrolina – PE</span>
+        </div>
+      </div>
+      <div class="ps1-img-card rv" style="transition-delay:.18s">
+        <img src="edicao1_b.jpeg" alt="1ª Edição Workshop - palestra em andamento">
+        <div class="ps1-caption">
+          <strong>Método PACE em ação</strong>
+          <span>Empresários transformando seus negócios</span>
+        </div>
+      </div>
+    </div>
+    <div class="ps1-stats">
+      <div class="ps1-stat rv" style="transition-delay:.1s">
+        <div class="ps1-stat-num">100+</div>
+        <div class="ps1-stat-label">Empresários presentes</div>
+      </div>
+      <div class="ps1-stat rv" style="transition-delay:.2s">
+        <div class="ps1-stat-num">3h</div>
+        <div class="ps1-stat-label">De conteúdo aplicável</div>
+      </div>
+      <div class="ps1-stat rv" style="transition-delay:.3s">
+        <div class="ps1-stat-num">2ª</div>
+        <div class="ps1-stat-label">Edição já confirmada</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<div class="pw sw">
+  <div class="pi">
+    <div>
+      <p class="st rv">O problema não é<br><span class="ac">falta de esforço.</span></p>
+      <p class="sd rv" style="transition-delay:.1s">É a falta de um método para transformar posicionamento em demanda, demanda em vendas — e vendas em escala.</p>
+      <ul class="pnl">
+        <li class="pni"><div class="pio"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2v7l4 4" stroke="#e05050" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="9" r="7" stroke="#e05050" stroke-width="1.4"/></svg></div><p class="pt"><strong>Dependência de indicação.</strong> Um mês entra cliente, no outro o movimento cai. Zero previsibilidade.</p></li>
+        <li class="pni" style="transition-delay:.1s"><div class="pio"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polyline points="2,14 6,8 10,11 14,4 16,6" stroke="#e05050" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 4h2v2" stroke="#e05050" stroke-width="1.6" stroke-linecap="round"/></svg></div><p class="pt"><strong>Marketing sem retorno.</strong> Você posta, anuncia, impulsiona… mas as vendas não crescem.</p></li>
+        <li class="pni" style="transition-delay:.2s"><div class="pio"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="8" width="12" height="8" rx="2" stroke="#e05050" stroke-width="1.4"/><path d="M6 8V6a3 3 0 016 0v2" stroke="#e05050" stroke-width="1.4" stroke-linecap="round"/></svg></div><p class="pt"><strong>Dono preso na operação.</strong> Se você parar, o negócio para. Depende demais de você.</p></li>
+        <li class="pni" style="transition-delay:.3s"><div class="pio"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#e05050" stroke-width="1.4"/><path d="M9 6v3" stroke="#e05050" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="12" r=".9" fill="#e05050"/></svg></div><p class="pt"><strong>Processo comercial desorganizado.</strong> Atrai interesse, mas não transforma em vendas.</p></li>
+      </ul>
+    </div>
+    <div class="bib rv"><p class="bil">A grande virada</p><p class="bit">Empresas locais não crescem com <span class="hl">ações isoladas.</span><br><br>Crescem quando organizam posicionamento, aquisição, conversão e escala em <span class="hl">um método.</span></p></div>
+  </div>
+</div>
+
+<!-- PACE -->
+<div class="sw"><section class="pcs">
+  <div class="pch rv"><p class="st">O <span class="ac">Método PACE</span></p><p class="sd" style="margin:0 auto">4 pilares que sustentam o crescimento de qualquer empresa local.</p></div>
+  <div class="pcg">
+    <div class="pcc"><span class="pcl">P</span><p class="pcn">Pilar 01</p><h3 class="pcname">Posicionamento</h3><p class="pcd">Sem diferencial claro, sua empresa compete por preço. Descubra como atrair os clientes certos.</p></div>
+    <div class="pcc"><span class="pcl">A</span><p class="pcn">Pilar 02</p><h3 class="pcname">Aquisição</h3><p class="pcd">Indicação não é estratégia. Construa canais de aquisição previsíveis todo mês.</p></div>
+    <div class="pcc"><span class="pcl">C</span><p class="pcn">Pilar 03</p><h3 class="pcname">Conversão</h3><p class="pcd">Atrair é metade. Estruture um processo que transforma interesse em vendas consistentes.</p></div>
+    <div class="pcc"><span class="pcl">E</span><p class="pcn">Pilar 04</p><h3 class="pcname">Escala</h3><p class="pcd">Organize o negócio para crescer sem depender só de você. Processos e estrutura.</p></div>
+  </div>
+</section></div>
+
+<div class="dv"></div>
+
+<!-- LEARN -->
+<div class="lw sw"><div class="li">
+  <div class="rv"><p class="st">O que você vai <span class="ac">aprender</span></p><p class="sd" style="margin-top:6px">Em 3 horas de workshop presencial, você sai com clareza, direção e plano de ação.</p></div>
+  <div class="lg">
+    <div class="lc"><div class="lck"><svg width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="lt"><strong>Diagnóstico do seu negócio</strong>Identifique em qual dos 4 pilares está o gargalo do seu crescimento hoje.</div></div>
+    <div class="lc"><div class="lck"><svg width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="lt"><strong>Como parar de depender de indicação</strong>Crie canais que geram demanda mesmo quando você não está presente.</div></div>
+    <div class="lc"><div class="lck"><svg width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="lt"><strong>Processo comercial que fecha</strong>Transforme contatos em clientes com consistência e método.</div></div>
+    <div class="lc"><div class="lck"><svg width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="lt"><strong>Posicionamento que atrai os certos</strong>Pare de competir por preço e seja escolhido pelo valor que entrega.</div></div>
+    <div class="lc"><div class="lck"><svg width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="lt"><strong>Como escalar sem ser o gargalo</strong>O que delegar para o negócio crescer sem depender de você.</div></div>
+    <div class="lc"><div class="lck"><svg width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="lt"><strong>Visão estratégica e próximos passos</strong>Saia com um mapa claro do que ajustar para crescer com previsibilidade.</div></div>
+  </div>
+</div></div>
+
+<!-- SPEAKERS -->
+<div class="spk-section sw"><div class="spk-inner">
+  <div class="rv"><p class="st">Quem vai <span class="ac">apresentar</span></p><p class="sd" style="margin-top:6px">Dois especialistas com experiência real em crescimento de empresas locais.</p></div>
+  <div class="spk-grid">
+    <div class="spk-card rv" style="transition-delay:.05s">
+      <div class="spk-img-wrap"><img src="lucas.jpeg" alt="Tenente Lucas" class="spk-img" style="object-position:center 8%"></div>
+      <div class="spk-body">
+        <p class="spk-num">Palestrante 01</p>
+        <h3 class="spk-name">Tenente Lucas</h3>
+        <div class="spk-tags"><span class="spk-tag">Marketing &amp; Vendas</span><span class="spk-tag">Método PACE</span><span class="spk-tag">Estratégia</span></div>
+        <p class="spk-bio">Estrategista de Marketing e Vendas. Criador do Método PACE — a metodologia que organiza Posicionamento, Aquisição, Conversão e Escala para empresas locais.<br><br>Aplico no seu negócio a disciplina e a estratégia de quem vive o campo de batalha diariamente. <strong style="color:#fff">Transformo empresas desorganizadas em máquinas previsíveis de lucro.</strong></p>
+      </div>
+    </div>
+    <div class="spk-card rv" style="transition-delay:.15s">
+      <div class="spk-img-wrap"><img src="rian.png" alt="Rian Mazille" class="spk-img" style="object-position:center 10%"></div>
+      <div class="spk-body">
+        <p class="spk-num">Palestrante 02</p>
+        <h3 class="spk-name">Rian Mazille</h3>
+        <div class="spk-tags"><span class="spk-tag">Processo Comercial</span><span class="spk-tag">Escala</span><span class="spk-tag">Times de Vendas</span></div>
+        <p class="spk-bio">Referência em Processo Comercial e Escala para negócios locais. Co-criador do Método PACE, um sistema de crescimento de ponta a ponta que liberta o empresário da operação.<br><br>Especialista em estruturar times de vendas e sistemas de alta performance. <strong style="color:#fff">Estratégia direta para quem busca escala real.</strong></p>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<!-- FOR WHO -->
+<section class="fws sw">
+  <p class="st rv">Para <span class="ac">quem é</span> esse workshop?</p>
+  <div class="fwg">
+    <div class="fwc fy rv">
+      <p class="fwt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#00e676" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="#00e676" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>É para você se...</p>
+      <ul class="fwl">
+        <li><span class="fwi"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#00e676" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Tem uma empresa local e quer crescer com previsibilidade</li>
+        <li><span class="fwi"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#00e676" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Se esforça muito mas os resultados não acompanham</li>
+        <li><span class="fwi"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#00e676" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Depende de indicação ou boca a boca para vender</li>
+        <li><span class="fwi"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#00e676" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Quer parar de ser escravo da operação</li>
+        <li><span class="fwi"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#00e676" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Busca clareza, método e resultado real</li>
+      </ul>
+    </div>
+    <div class="fwc fn rv" style="transition-delay:.15s">
+      <p class="fwt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="rgba(255,255,255,.28)" stroke-width="1.5"/><path d="M6 6l8 8M14 6l-8 8" stroke="rgba(255,255,255,.28)" stroke-width="1.7" stroke-linecap="round"/></svg>Não é para você se...</p>
+      <ul class="fwl">
+        <li><span class="fwi"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 3l8 8M11 3L3 11" stroke="rgba(255,255,255,.28)" stroke-width="1.6" stroke-linecap="round"/></svg></span>Quer só dicas genéricas de marketing</li>
+        <li><span class="fwi"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 3l8 8M11 3L3 11" stroke="rgba(255,255,255,.28)" stroke-width="1.6" stroke-linecap="round"/></svg></span>Não está disposto a implementar mudanças</li>
+        <li><span class="fwi"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 3l8 8M11 3L3 11" stroke="rgba(255,255,255,.28)" stroke-width="1.6" stroke-linecap="round"/></svg></span>Acha que o problema é só falta de tráfego</li>
+        <li><span class="fwi"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 3l8 8M11 3L3 11" stroke="rgba(255,255,255,.28)" stroke-width="1.6" stroke-linecap="round"/></svg></span>Quer fórmula mágica sem processo</li>
+        <li><span class="fwi"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 3l8 8M11 3L3 11" stroke="rgba(255,255,255,.28)" stroke-width="1.6" stroke-linecap="round"/></svg></span>Não tem compromisso com o crescimento</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="tst-section sw">
+  <div class="rv"><p class="st">O que dizem quem <span class="ac">já viveu</span></p><p class="sd" style="margin-top:6px">Empresários locais que aplicaram o Método PACE e mudaram de patamar.</p></div>
+  <div class="tst-grid">
+    <div class="tst-card">
+      <div><div class="tst-badge">⭐ Escala &amp; Previsibilidade</div><div class="tst-stars">★★★★★</div></div>
+      <p class="tst-text">"Eu vivia refém de indicações e do boca a boca para vender. Com a aplicação do Método PACE, finalmente entendi o que é ter <strong>uma máquina de aquisição de clientes</strong>. O Lucas e o Rian não entregam teoria, entregam o que aplicam na agência deles todos os dias. Minha empresa em Petrolina mudou de patamar."</p>
+      <div class="tst-author"><div class="tst-avatar">E</div><div class="tst-info"><strong>Empresário(a) Local</strong><span>Petrolina · PE</span></div></div>
+    </div>
+    <div class="tst-card" style="transition-delay:.1s">
+      <div><div class="tst-badge">⭐ Processo &amp; Organização</div><div class="tst-stars">★★★★★</div></div>
+      <p class="tst-text">"O maior erro do dono de negócio é achar que precisa estar em tudo. O Método PACE organizou meu posicionamento e meu processo comercial de ponta a ponta. Hoje, <strong>sei exatamente de onde vem cada venda</strong> e a operação não depende mais da minha presença 24h por dia."</p>
+      <div class="tst-author"><div class="tst-avatar">D</div><div class="tst-info"><strong>Dono(a) de Empresa de Serviços</strong><span>Região de Petrolina · PE</span></div></div>
+    </div>
+    <div class="tst-card" style="transition-delay:.2s">
+      <div><div class="tst-badge">⭐ Autoridade &amp; Resultado</div><div class="tst-stars">★★★★★</div></div>
+      <p class="tst-text">"O diferencial do Tenente Lucas e do Rian é a clareza. Eles pegam o marketing e as vendas, que parecem complexos, e transformam em <strong>um sistema lógico de Conversão e Escala</strong>. Os primeiros ajustes já mudaram o jogo aqui no negócio. Valeu a pena demais estar lá."</p>
+      <div class="tst-author"><div class="tst-avatar">L</div><div class="tst-info"><strong>Lojista / Empreendedor(a)</strong><span>Petrolina · PE</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENT DETAILS -->
+<div class="evd-section sw"><div class="evd-inner">
+  <div class="evd-card rv">
+    <div class="evd-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="14" rx="2" stroke="var(--gold2)" stroke-width="1.5"/><path d="M2 8h16M7 2v3M13 2v3" stroke="var(--gold2)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+    <p class="evd-label">Data</p>
+    <p class="evd-value">26 de Maio<br><span style="color:var(--gold3)">2026</span></p>
+    <p class="evd-sub">Terça-feira · 2ª Edição</p>
+  </div>
+  <div class="evd-card rv" style="transition-delay:.1s">
+    <div class="evd-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="var(--gold2)" stroke-width="1.5"/><path d="M10 5.5V10l3 2.5" stroke="var(--gold2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <p class="evd-label">Horário</p>
+    <p class="evd-value">19h <span style="color:rgba(255,255,255,.3);font-size:.7em">às</span> 22h</p>
+    <p class="evd-sub">3 horas de conteúdo presencial</p>
+  </div>
+  <div class="evd-card rv" style="transition-delay:.2s">
+    <div class="evd-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C7.24 2 5 4.24 5 7c0 4.25 5 11 5 11s5-6.75 5-11c0-2.76-2.24-5-5-5z" stroke="var(--gold2)" stroke-width="1.5"/><circle cx="10" cy="7" r="2" fill="var(--gold2)"/></svg></div>
+    <p class="evd-label">Local</p>
+    <p class="evd-value">Auditório<br><span style="color:var(--gold3)">Performance Cred</span></p>
+    <p class="evd-sub">Av. da Integração, 743A<br>Alto Cheiroso · Petrolina – PE</p>
+    <a class="evd-map-link" href="https://www.google.com/maps/search/?api=1&query=Av.+da+Integração,+743A,+Petrolina,+PE" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10l8-8M10 2H4M10 2v6" stroke="var(--gold2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Ver no Google Maps
+    </a>
+  </div>
+</div></div>
+
+<!-- FINAL CTA -->
+<div class="fcw sw" id="inscricao"><div class="fcc">
+  <div class="rv"><p class="st">Garanta sua <span class="ac">vaga agora</span></p><p style="color:rgba(255,255,255,.55);font-size:18px;margin-top:12px;line-height:1.65">Em 3 horas, entenda o que está travando o crescimento da sua empresa e como usar os 4 pilares do Método PACE para atrair, converter e escalar.</p></div>
+  <div class="pbadge rv" style="transition-delay:.15s"><span class="pfrom">De R$ 197</span><span class="pmain">R$ 47</span><span class="psub">Ingresso presencial · Vagas limitadas</span></div>
+  <div class="rv" style="transition-delay:.28s">
+    <a href="https://wa.me/+5574981045355?text=Ol%C3%A1,%20tenho%20interesse%20no%20Workshop%20Acelerador%20de%20Neg%C3%B3cios" class="btnf" target="_blank" rel="noopener">💬 Quero minha vaga<svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 11h12M13 7l4 4-4 4" stroke="#07090f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <div class="gu"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="5" width="12" height="8" rx="2" stroke="rgba(255,255,255,.35)" stroke-width="1.2"/><path d="M4 5V4a3 3 0 016 0v1" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round"/></svg>Pagamento 100% seguro · 26 MAI · 19h às 22h · Av. da Integração, 743A · Petrolina – PE</div>
+  </div>
+</div></div>
+
+<!-- STICKY -->
+<div class="stk" id="sb">
+  <div class="si"><strong>Workshop Acelerador de Negócios · 2ª Edição</strong><span>26 MAI · 19h às 22h · Petrolina – PE</span></div>
+  <a href="https://wa.me/+5574981045355?text=Ol%C3%A1,%20tenho%20interesse%20no%20Workshop%20Acelerador%20de%20Neg%C3%B3cios" class="btns" target="_blank" rel="noopener">💬 Garantir vaga →</a>
+</div>
+<footer>Workshop Acelerador de Negócios · 2ª Edição · Método PACE · 26 de Maio de 2026 · 19h às 22h · Av. da Integração, 743A · Alto Cheiroso · Petrolina – PE</footer>
+
+<script>
+/* ═══════════════════════════════════════════════════
+   BACKGROUND ENGINE — GOLD/COPPER EDITION
+   Paleta: dourado/cobre + azul tech sutil
+═══════════════════════════════════════════════════ */
+(function(){
+  const C=document.getElementById('bg');
+  const X=C.getContext('2d');
+  let W,H,t=0;
+  let pts=[],nds=[],conns=[],hexes=[],bolts=[],ripples=[];
+  let MX=0.5,MY=0.5;
+
+  function resize(){W=C.width=window.innerWidth;H=C.height=window.innerHeight;buildConns();}
+
+  function mkPt(){return{x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.26,vy:(Math.random()-.5)*.26,r:.3+Math.random()*1.1,ly:Math.floor(Math.random()*3),trail:[]};}
+  function mkNd(){return{x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.12,vy:(Math.random()-.5)*.12,r:1+Math.random()*2,ph:Math.random()*Math.PI*2};}
+  function mkHex(){return{ox:Math.random(),oy:Math.random(),r:20+Math.random()*46,sp:.05+Math.random()*.16,ph:Math.random()*Math.PI*2};}
+  function mkBolt(){
+    const p2=[],sx=Math.random()*W;let cx=sx,cy=0;
+    while(cy<H*.65){cy+=20+Math.random()*28;cx+=(Math.random()-.5)*52;p2.push([cx,cy]);}
+    return{pts:p2,life:1,decay:.018+Math.random()*.014,w:.35+Math.random()*.7};
+  }
+
+  function init(){
+    resize();
+    const n=Math.min(Math.floor(W*H/4800),200);
+    pts=Array.from({length:n},mkPt);
+    nds=Array.from({length:Math.floor(n*.18)},mkNd);
+    hexes=Array.from({length:9},mkHex);
+    buildConns();
+  }
+  function buildConns(){
+    conns=[];if(!nds.length)return;
+    for(let i=0;i<nds.length;i++)for(let j=i+1;j<nds.length;j++){
+      const dx=nds[i].x-nds[j].x,dy=nds[i].y-nds[j].y;
+      if(dx*dx+dy*dy<38000)conns.push([i,j]);
+    }
+  }
+
+  /* Layer 1: bg */
+  function drawBg(){
+    const g=X.createLinearGradient(0,0,W*.6,H);
+    g.addColorStop(0,'#05070e');g.addColorStop(.5,'#080b14');g.addColorStop(1,'#040609');
+    X.fillStyle=g;X.fillRect(0,0,W,H);
+  }
+
+  /* Layer 2: aurora — gold + blue */
+  function drawAurora(){
+    const tm=t*.0007;
+    // gold top center
+    const ax=W*(.5+Math.sin(tm*.65)*.2),ay=H*(-.04+Math.sin(tm*.38)*.07);
+    const ga=X.createRadialGradient(ax,ay,0,ax,ay,H*.68);
+    ga.addColorStop(0,`rgba(180,110,20,${.1+Math.sin(tm*1.2)*.035})`);
+    ga.addColorStop(.5,`rgba(140,80,10,${.05+Math.sin(tm*.7)*.018})`);
+    ga.addColorStop(1,'transparent');
+    X.fillStyle=ga;X.fillRect(0,0,W,H);
+    // copper right
+    const bx=W*(.82+Math.cos(tm*.55)*.1),by=H*(.3+Math.sin(tm*.48)*.14);
+    const gb=X.createRadialGradient(bx,by,0,bx,by,H*.4);
+    gb.addColorStop(0,`rgba(200,140,40,${.07+Math.sin(tm*1.0)*.022})`);
+    gb.addColorStop(1,'transparent');
+    X.fillStyle=gb;X.fillRect(0,0,W,H);
+    // blue tech left (circuit accent)
+    const cx=W*(.12+Math.sin(tm*.48)*.08),cy=H*(.6+Math.cos(tm*.38)*.1);
+    const gc=X.createRadialGradient(cx,cy,0,cx,cy,H*.32);
+    gc.addColorStop(0,`rgba(0,120,220,${.04+Math.sin(tm*.85)*.015})`);
+    gc.addColorStop(1,'transparent');
+    X.fillStyle=gc;X.fillRect(0,0,W,H);
+    // gold bottom
+    const dx=W*(.45+Math.cos(tm*.52)*.16),dy=H*(1.04+Math.sin(tm*.36)*.05);
+    const gd=X.createRadialGradient(dx,dy,0,dx,dy,H*.5);
+    gd.addColorStop(0,`rgba(160,100,20,${.08+Math.cos(tm*1.1)*.022})`);
+    gd.addColorStop(1,'transparent');
+    X.fillStyle=gd;X.fillRect(0,0,W,H);
+    // mouse gold glow
+    const gm=X.createRadialGradient(MX*W,MY*H,0,MX*W,MY*H,H*.28);
+    gm.addColorStop(0,'rgba(200,140,40,0.025)');gm.addColorStop(1,'transparent');
+    X.fillStyle=gm;X.fillRect(0,0,W,H);
+  }
+
+  /* Layer 3: perspective grid — gold lines */
+  function drawGrid(){
+    const hy=H*.5,vx=W*.5,spd=(t*.18)%(H*.033);
+    X.save();
+    for(let i=0;i<=16;i++){
+      const raw=hy+(i/16)*(H-hy)+spd;
+      if(raw<hy||raw>H)continue;
+      const p=(raw-hy)/(H-hy);
+      X.beginPath();X.moveTo(0,raw);X.lineTo(W,raw);
+      X.strokeStyle=`rgba(180,120,30,${p*.13})`;X.lineWidth=p*.7;X.stroke();
+    }
+    for(let i=0;i<=20;i++){
+      const bx=(i/20)*W,edge=Math.abs(i/20-.5)*2;
+      X.beginPath();X.moveTo(vx,hy);X.lineTo(bx,H);
+      X.strokeStyle=`rgba(160,100,20,${.02+edge*.035})`;X.lineWidth=.4;X.stroke();
+    }
+    // horizon line gold
+    const hg=X.createLinearGradient(0,hy-1,0,hy+2);
+    hg.addColorStop(0,'transparent');
+    hg.addColorStop(.5,`rgba(200,140,40,${.16+Math.sin(t*.02)*.05})`);
+    hg.addColorStop(1,'transparent');
+    X.fillStyle=hg;X.fillRect(0,hy-1,W,3);
+    X.restore();
+  }
+
+  /* Layer 4: lightning — gold */
+  function drawBolts(){
+    if(Math.random()<.0028)bolts.push(mkBolt());
+    bolts=bolts.filter(b=>b.life>0);
+    bolts.forEach(b=>{
+      X.save();X.globalAlpha=b.life;
+      X.shadowColor='rgba(220,160,50,1)';X.shadowBlur=8;
+      X.strokeStyle='rgba(220,160,60,.85)';X.lineWidth=b.w;
+      X.beginPath();X.moveTo(b.pts[0][0],0);b.pts.forEach(p=>X.lineTo(p[0],p[1]));X.stroke();
+      X.shadowBlur=0;X.strokeStyle='rgba(255,220,120,.75)';X.lineWidth=b.w*.35;
+      X.beginPath();X.moveTo(b.pts[0][0],0);b.pts.forEach(p=>X.lineTo(p[0],p[1]));X.stroke();
+      X.restore();b.life-=b.decay;
+    });
+  }
+
+  /* Layer 5: particles — gold tones */
+  const LSPD=[.5,.85,1.2],LSZ=[.35,.65,1.1],LAL=[.07,.16,.28];
+  function drawParticles(){
+    pts.forEach(p=>{
+      const px=p.x+(MX-.5)*p.ly*3.5,py=p.y+(MY-.5)*p.ly*2.5;
+      p.trail.push([px,py]);if(p.trail.length>6)p.trail.shift();
+      for(let i=1;i<p.trail.length;i++){
+        const al=LAL[p.ly]*(i/p.trail.length)*.5;
+        X.beginPath();X.moveTo(p.trail[i-1][0],p.trail[i-1][1]);X.lineTo(p.trail[i][0],p.trail[i][1]);
+        X.strokeStyle=`rgba(200,140,40,${al})`;X.lineWidth=p.r*LSZ[p.ly]*.6;X.stroke();
+      }
+      X.beginPath();X.arc(px,py,p.r*LSZ[p.ly],0,Math.PI*2);
+      X.fillStyle=`rgba(200,140,40,${LAL[p.ly]})`;X.fill();
+      p.x+=p.vx*LSPD[p.ly];p.y+=p.vy*LSPD[p.ly];
+      if(p.x<-10)p.x=W+10;if(p.x>W+10)p.x=-10;
+      if(p.y<-10)p.y=H+10;if(p.y>H+10)p.y=-10;
+    });
+  }
+
+  /* Layer 6: neural net — gold */
+  function drawNet(){
+    conns.forEach(([i,j])=>{
+      const a=nds[i],b=nds[j],d=Math.sqrt((a.x-b.x)**2+(a.y-b.y)**2);
+      X.beginPath();X.moveTo(a.x,a.y);X.lineTo(b.x,b.y);
+      X.strokeStyle=`rgba(180,120,30,${(1-d/200)*.12})`;X.lineWidth=.5;X.stroke();
+    });
+    nds.forEach(n=>{
+      n.ph+=.016;const p=Math.sin(n.ph)*.5+.5;
+      const gr=X.createRadialGradient(n.x,n.y,0,n.x,n.y,n.r*6+p*4);
+      gr.addColorStop(0,`rgba(200,140,40,${.11*p})`);gr.addColorStop(1,'transparent');
+      X.beginPath();X.arc(n.x,n.y,n.r*6+p*4,0,Math.PI*2);X.fillStyle=gr;X.fill();
+      X.beginPath();X.arc(n.x,n.y,n.r,0,Math.PI*2);
+      X.fillStyle=`rgba(210,150,50,${.22+p*.28})`;X.fill();
+      n.x+=n.vx+(MX-.5)*.055;n.y+=n.vy+(MY-.5)*.038;
+      if(n.x<0)n.vx=Math.abs(n.vx);if(n.x>W)n.vx=-Math.abs(n.vx);
+      if(n.y<0)n.vy=Math.abs(n.vy);if(n.y>H)n.vy=-Math.abs(n.vy);
+    });
+  }
+
+  /* Layer 7: circuit-board hex rings */
+  function drawHexes(){
+    hexes.forEach(h=>{
+      const x=(h.ox+Math.sin(t*h.sp*.004+h.ph)*.055)*W;
+      const y=(h.oy+Math.cos(t*h.sp*.0036+h.ph)*.055)*H;
+      const al=.022+Math.sin(t*h.sp*.009+h.ph)*.013;
+      for(let ring=0;ring<2;ring++){
+        const rr=h.r*(ring?.52:1),ra=al*(ring?.45:1);
+        X.save();X.globalAlpha=ra;
+        X.strokeStyle='rgba(190,130,35,1)';X.lineWidth=ring?.38:.72;
+        X.beginPath();
+        for(let i=0;i<6;i++){const a=(i/6)*Math.PI*2-Math.PI/6;i?X.lineTo(x+Math.cos(a)*rr,y+Math.sin(a)*rr):X.moveTo(x+Math.cos(a)*rr,y+Math.sin(a)*rr);}
+        X.closePath();X.stroke();X.restore();
+      }
+    });
+  }
+
+  /* Layer 8: scan — gold tone */
+  function drawScan(){
+    const sy=(Math.sin(t*.003)*.5+.5)*H;
+    const sg=X.createLinearGradient(0,sy-70,0,sy+70);
+    sg.addColorStop(0,'transparent');
+    sg.addColorStop(.5,`rgba(190,130,30,${.014+Math.sin(t*.01)*.005})`);
+    sg.addColorStop(1,'transparent');
+    X.fillStyle=sg;X.fillRect(0,sy-70,W,140);
+    X.fillStyle=`rgba(210,150,40,${.045+Math.sin(t*.014)*.016})`;
+    X.fillRect(0,sy-.5,W,1);
+  }
+
+  /* Layer 9: ripples */
+  function drawRipples(){
+    ripples=ripples.filter(r=>r.life>0);
+    ripples.forEach(r=>{
+      X.save();X.globalAlpha=r.life*.18;
+      X.strokeStyle='rgba(200,140,40,1)';X.lineWidth=.7;
+      X.beginPath();X.arc(r.x,r.y,r.r,0,Math.PI*2);X.stroke();
+      X.restore();r.r+=2.5;r.life-=.025;
+    });
+  }
+
+  function frame(){
+    X.clearRect(0,0,W,H);
+    drawBg();drawAurora();drawGrid();drawBolts();
+    drawParticles();drawNet();drawHexes();drawScan();drawRipples();
+    t++;requestAnimationFrame(frame);
+  }
+
+  window.addEventListener('resize',resize);
+  document.addEventListener('mousemove',e=>{
+    MX=e.clientX/window.innerWidth;MY=e.clientY/window.innerHeight;
+    if(Math.random()<.07)ripples.push({x:e.clientX,y:e.clientY,r:4,life:1});
+  });
+  document.addEventListener('click',e=>{
+    for(let i=0;i<3;i++)ripples.push({x:e.clientX,y:e.clientY,r:2+i*7,life:1-.22*i});
+  });
+  init();frame();
+})();
+
+/* ═══ CURSOR ═══ */
+const cur=document.getElementById('cur'),cur2=document.getElementById('cur2');
+let cx=0,cy=0,lx=0,ly=0;
+document.addEventListener('mousemove',e=>{cx=e.clientX;cy=e.clientY;});
+(function loop(){lx+=(cx-lx)*.14;ly+=(cy-ly)*.14;cur.style.left=cx+'px';cur.style.top=cy+'px';cur2.style.left=lx+'px';cur2.style.top=ly+'px';requestAnimationFrame(loop);})();
+
+/* ═══ COUNTDOWN ═══ */
+const EV=new Date('2026-05-26T19:00:00-03:00');
+const pad=n=>String(Math.max(0,n)).padStart(2,'0');
+const prev={};
+function flip(id,val){const el=document.getElementById(id);if(prev[id]!==val){el.classList.remove('flip');void el.offsetWidth;el.classList.add('flip');prev[id]=val;}el.textContent=val;}
+function tick(){
+  const d=EV-Date.now();
+  if(d<=0){['dd','dh','dm','ds'].forEach(k=>document.getElementById(k).textContent='00');return;}
+  flip('dd',pad(Math.floor(d/86400000)));flip('dh',pad(Math.floor((d%86400000)/3600000)));
+  flip('dm',pad(Math.floor((d%3600000)/60000)));flip('ds',pad(Math.floor((d%60000)/1000)));
+}
+tick();setInterval(tick,1000);
+
+/* ═══ REVEAL ═══ */
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});},{threshold:.1});
+document.querySelectorAll('.rv,.pni,.pcc,.lc,.tst-card').forEach(el=>obs.observe(el));
+document.querySelectorAll('.pcc').forEach((c,i)=>c.style.transitionDelay=(i*.1)+'s');
+document.querySelectorAll('.lc').forEach((c,i)=>c.style.transitionDelay=(i*.08)+'s');
+
+/* ═══ STICKY ═══ */
+new IntersectionObserver(e=>{document.getElementById('sb').classList.toggle('vis',!e[0].isIntersecting);},{threshold:0}).observe(document.querySelector('.hero'));
+
+/* ═══ PIXEL ═══ */
+document.querySelectorAll('a[href*="wa.me"]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    if(typeof fbq!=='undefined'){fbq('track','InitiateCheckout',{content_name:'Workshop Acelerador de Negócios 2ª Edição',value:47.00,currency:'BRL',num_items:1});}
+  });
+});
+</script>
+</body>
+</html>
